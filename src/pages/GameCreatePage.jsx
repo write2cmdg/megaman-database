@@ -5,7 +5,7 @@ const GameCreatePage = () => {
   return (
     <>
     
-      <h2 className='text-xl md:text-3xl lg:text-4xl mx-auto w-2/3 p-6 text-3xl text-blue-900'>Create game</h2>
+      <h2 className='text-xl md:text-2xl lg:text-3xl mx-auto w-2/3 p-6 text-3xl text-blue-900'>Create game</h2>
         <div className="w-screen min-h-[75%] flex bg-blue-100/50">
             {/* content */}
         </div>
