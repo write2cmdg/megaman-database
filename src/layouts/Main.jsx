@@ -6,7 +6,7 @@ import { Outlet } from "react-router-dom";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import Separator from "../components/Separator";
-import StarsBg from "../components/StarsBG";
+import StarsBg from "../components/StarsBg";
 
 
 const Main = () => {
