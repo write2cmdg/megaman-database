@@ -1,8 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-//component imports
-import CardContainer from '../components/CardContainer'
 
 const GamePage = () => {
   return (
