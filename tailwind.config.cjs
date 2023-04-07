@@ -2,6 +2,7 @@
 module.exports = {
   theme: {
     extend: {
+
       animation: {
         stars: 'stars 12s linear infinite',
       },
@@ -22,5 +23,5 @@ module.exports = {
     },
   },
   content: ["./**/**/*.{js,ts,jsx,tsx,html}", "./**/*.{js,ts,jsx,tsx,html}", "./*.{html,js,jsx}"],
-  plugins: [],
+  plugins: [require('tailwind-scrollbar')],
 };

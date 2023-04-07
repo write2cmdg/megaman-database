@@ -1,16 +1,88 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
+import { Link, Form } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom/dist'
+import Separator from '../components/Separator'
 
 const BossCreatePage = () => {
+  
+  const [values, setValues] = useState({
+    name: '',
+    HP: '',
+    weapon: '',
+    attack: '',
+    weakness: '',
+    game: ''
+  })
+  
+  const navigate = useNavigate()
+  
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    axios.post('http://localhost:4000/', values)
+    .then(res => {navigate('/bosses')})
+    .catch(err => setError(err.error.message));
+  
+  }
+
   return (
-        <>
-        <h2 className='text-xl md:text-2xl lg:text-3xl mx-auto w-2/3 p-6 text-3xl text-blue-900'>Create boss</h2>
-        <div className="w-screen min-h-[75%] flex bg-blue-100/50">
-            {/* content */}
-        </div>
-        <div className='z-50 text-xs md:text-lg lg:text-1xl mx-auto my-4 w-screen sm:w-2/3 flex flex-row justify-around'>
-        </div>   
-      </>
+    
+    <div>
+
+      <Separator />
+
+      <div className="bg-slate-800/90 flex flex-row justify-evenly">
+
+        <h2 className='
+        p-4 justify-center mx-auto
+        text-blue-200 text-xl w-screen md:text-3xl text-center font-press-start uppercase
+        '>new Robot Master</h2>
+
+      </div>
+
+      <div className='text-blue-200 font-bold bg-slate-800/90'>
+
+        <Form onSubmit={handleSubmit} className="px-8 sm:w-3/4 md:w-1/2 w-screen p-2 flex flex-col text-left mx-auto uppercase">
+
+          <div className="mb-2 flex flex-row justify-between">
+            <label className='w-1/3 font-press-start' htmlFor="name">Name: </label>
+            <input className='w-1/2 pl-3 bg-blue-200 text-blue-900 capitalize border-blue-900 border-4 p-1 rounded-lg' type="text" name="name" id="name" placeholder='Required' onChange={e => setValues({...values, name: e.target.value})}/>
+          </div>
+
+          <div className="mb-2 flex flex-row justify-between">
+            <label className='w-1/3 font-press-start' htmlFor="HP">HP: </label>
+            <input className='w-1/2 pl-3 bg-blue-200 text-blue-900 capitalize border-blue-900 border-4 p-1 rounded-lg' type="text" name="HP" id="HP" placeholder='Required'  onChange={e => setValues({...values, HP: e.target.value})} />
+          </div>
+
+          <div className="mb-2 flex flex-row justify-between">
+            <label className='w-1/3 font-press-start' htmlFor="weapon">Weapon: </label>
+            <input className='w-1/2 pl-3 bg-blue-200 text-blue-900 capitalize border-blue-900 border-4 p-1 rounded-lg' type="text" name="weapon" id="weapon" placeholder='Required'  onChange={e => setValues({...values, weapon: e.target.value})} />
+          </div>
+
+          <div className="mb-2 flex flex-row justify-between">
+            <label className='w-1/3 font-press-start' htmlFor="attack">Attack: </label>
+            <input className='w-1/2 pl-3 bg-blue-200 text-blue-900 capitalize border-4 p-1  border-blue-900 rounded-lg' type="text" name="attack" id="attack" placeholder='Required'  onChange={e => setValues({...values, attack: e.target.value})} />
+          </div>
+
+          <div className="mb-2 flex flex-row justify-between">
+            <label className='w-1/3 font-press-start' htmlFor="weakness">Weakness: </label>
+            <input className='w-1/2 pl-3 bg-blue-200 text-blue-900 capitalize border-blue-900 border-4 p-1 rounded-lg' type="text" name="weakness" id="weakness" placeholder='Required'  onChange={e => setValues({...values, weakness: e.target.value})} />
+          </div>
+
+          <div className="mb-2 flex flex-row justify-between">
+            <label className='w-1/3 font-press-start' htmlFor="game">Game: </label>
+            <input className='w-1/2 pl-3 bg-blue-200 text-blue-900 capitalize border-blue-900 border-4 p-1 rounded-lg' type="text" name="game" id="game" placeholder='Required'  onChange={e => setValues({...values, game: e.target.value})} />
+          </div>
+
+          <button className="uppercase mt-8 font-press-start text-lg hover:text-yellow-200 hover:bg-red-800 hover:border-red-900 text-blue-200 capitalize bg-blue-900 my-2 border-blue-900 border-4 p-1 rounded-lg">Submit</button>
+
+        </Form>
+
+      </div>
+
+      <Separator />
+
+    </div>
   )
 }
 

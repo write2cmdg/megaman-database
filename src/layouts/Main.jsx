@@ -12,17 +12,13 @@ import StarsBg from "../components/StarsBg";
 const Main = () => {
 
   return (
-    <div className="text-white uppercase w-screen h-screen flex flex-col justify-between font-press-start">
+    <div className="p-0 sm:p-4 md:p-12 mx-auto flex flex-col justify-between w-screen h-screen overflow-hidden lg:w-2/3 2xl:w-1/2 ">
       <NavBar />
-      <StarsBg />
-      <main className="relative -top-10 text-center w-screen h-2/3 ">
-      <Separator />
-        <div className="-z-20 h-3/4 bg-blue-200/50 border-y-4 border-sky-900/50">
-          <Outlet />
-        </div>
-      <Separator />
+      <main className="border-x-8 border-blue-200/30 rounded-lg">
+        <Outlet />
       </main>
       <Footer />
+      <StarsBg />
     </div>
   )
 }

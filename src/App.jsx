@@ -39,7 +39,7 @@ const router = createBrowserRouter([
         element: <BossesPage />,
       },
       {
-        path: "/bosses/boss",
+        path: "/bosses/boss/:id",
         element: <BossPage />
       }, 
       {
@@ -47,8 +47,12 @@ const router = createBrowserRouter([
         element: <BossCreatePage />
       }, 
       {
-        path: "/bosses/boss/updateBoss",
+        path: "/bosses/boss/updateBoss/:id",
         element: <BossUpdatePage />
+      },
+      {
+        path: "/bosses/boss/deleteBoss/:id",
+        element: <p>Boss Delete</p>
       },
       {
         path: "/games/game",
