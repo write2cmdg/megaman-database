@@ -1,24 +1,62 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
 
-//rrd imports
+
+//rrd Imports
 import { Link } from 'react-router-dom'
-
-//component imports
 import Separator from '../components/Separator'
 
+
 const GamesPage = () => {
+  const [ data, setData] = useState([])
+
+  useEffect(() => {
+  axios.get('http://localhost:4000/')
+  .then(res => setData(res.data))
+  .catch(err => console.log(err));
+  }, [])
+  
   return (
-    <>
-      <h2 className='text-xl md:text-2xl lg:text-3xl mx-auto w-2/3 p-6 text-3xl text-blue-900'>all GAMES</h2>
-      <div className="w-screen min-h-[75%] flex bg-blue-100/50">
-          {/* content */}
+
+    <div>
+      <Separator />
+
+      <div className="bg-slate-800/90 flex flex-row justify-evenly">
+
+        <h2 className='
+        p-4 justify-center mx-auto my-4
+        text-blue-200 text-xl w-screen md:text-3xl text-center font-press-start uppercase
+        '>All Robot Masters</h2>
+
       </div>
-      <div className='z-50 text-xs md:text-lg lg:text-1xl mx-auto my-4 w-screen sm:w-2/3 flex flex-row justify-around'>
-        <Link to="/games/game"> megaman GAME </Link>
-        <Link to="/games/createGame"> CREATE GAME </Link>
-      </div>   
-    </>
+
+      <div className='lg:h-80 h-44  bg-slate-800/90 overflow-hidden overflow-y-auto scrollbar scrollbar-rounded-large scrollbar-thumb-blue-900 scrollbar-track-blue-900/40 hover:scrollbar-thumb-blue-200/50'>
+
+
+
+        <div className='text-blue-200'>
+          {
+            data.map((d, ind) => (
+          
+              <div className='flex flex-col items-center justify-center h-12' key={ind}>
+                <Link className="sm:text-3xl text-lg capitalize hover:text-blue-200/50" to={`/bosses/boss/${d._id}`}  ><strong>{d.name}</strong></Link>
+              </div>
+            ))
+          }
+        </div>
+
+      </div>
+      
+      <div className="bg-slate-800/90 flex flex-row p-2 md:justify-evenly justify-between uppercase font-press-start text-xs md:text-xl text-center  ">
+  
+        <Link className='mx-auto my-4 py-2 px-8 text-blue-200 border-2 border-blue-200 rounded-2xl hover:text-yellow-300' to="/bosses/createBoss">Add new Robot master</Link>
+
+      </div>
+
+      <Separator />
+
+    </div>
   )
-} 
+}
 
 export default GamesPage

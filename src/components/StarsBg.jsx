@@ -70,8 +70,9 @@ function StarsBg() {
 
   return (
     <div
-      className="absolute inset-0 z-[-20]"
-      style={{ background: '#081849', width: '100vw', height: '100vh' }}
+      className="absolute inset-0 z-[-20] w-screen h-[200%] "
+      style={{ backgroundImage: 'linear-gradient(180deg, rgba(2,0,36,1) 10%, rgba(0,184,237,1) 100%)' }}
+
     >
       <canvas id="myCanvas"></canvas>
 
