@@ -48,7 +48,7 @@ const BossPage = () => {
 
 
         <div className='h-full text-blue-200 p-4 text-sm lg:text-xl flex flex-col ml-8 justify-evenly'>
-          <h2 className='capitalize'><strong className='uppercase font-press-start text-md align-middle'>HP:</strong> {data.HP}</h2>
+          <h2 className='capitalize'><strong className='uppercase font-press-start text-md align-middle'>HP:</strong> {data.hp}</h2>
           <h2 className='capitalize'><strong className='uppercase font-press-start text-md align-middle'>weapon:</strong> {data.weapon}</h2>
           <h2 className='capitalize'><strong className='uppercase font-press-start text-md align-middle'>attack:</strong> {data.attack}</h2>
           <h2 className='capitalize'><strong className='uppercase font-press-start text-md align-middle'>weakness:</strong> {data.weakness}</h2>

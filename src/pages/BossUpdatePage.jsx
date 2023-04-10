@@ -44,7 +44,7 @@ function BossUpdatePage() {
 
       <div className='text-blue-200 font-bold bg-slate-800/90'>
 
-        <Form onSubmit={handleSubmit} className="px-8 w-full sm:w-3/4 w-screen p-2 flex flex-col text-left mx-auto uppercase">
+        <Form onSubmit={handleSubmit} className="sm:w-3/4 w-screen p-2 flex flex-col text-left mx-auto uppercase">
 
           <div className="mb-2 flex flex-row justify-around">
             <label className='w-1/2 font-press-start' htmlFor="name">Name: </label>
@@ -53,7 +53,7 @@ function BossUpdatePage() {
 
           <div className="mb-2 flex flex-row justify-around">
             <label className='w-1/2 font-press-start' htmlFor="HP">HP: </label>
-            <input className='w-1/2 pl-3 bg-blue-200 text-blue-900 capitalize border-blue-900 border-4 p-1 rounded-lg' type="text" name="HP" placeholder={data.HP} onChange={e => setValues({...values, HP: e.target.value})} />
+            <input className='w-1/2 pl-3 bg-blue-200 text-blue-900 capitalize border-blue-900 border-4 p-1 rounded-lg' type="text" name="HP" placeholder={data.hp} onChange={e => setValues({...values, HP: e.target.value})} />
           </div>
 
           <div className="mb-2 flex flex-row justify-around">

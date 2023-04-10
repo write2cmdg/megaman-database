@@ -23,17 +23,16 @@ const NavBar = () => {
       <div className="
       w-full
       md:text-xl text-md
-      flex flex-col md:flex-row justify-evenly mb-6 md:ml-0 ml-8 content-around
+      flex flex-col md:flex-row md:gap-2 justify-evenly mb-6 md:mx-0 mx-8 content-around
       ">
 
-        <NavLink className="
-        mb-3 underline hover:text-yellow-300" 
+        <NavLink className="mx-auto py-2 min-w-fit px-4 md:mb-2 text-center w-full text-blue-200 border-2 border-blue-200 rounded-2xl hover:text-yellow-300" 
         to="/games">ALL GAMES</NavLink>
 
-        <NavLink className="mb-3 underline hover:text-yellow-300" 
+        <NavLink className="mx-auto py-2 min-w-fit px-4 md:mb-2 text-center w-full text-blue-200 border-2 border-blue-200 rounded-2xl hover:text-yellow-300" 
         to="/bosses">ALL BOSSES</NavLink>
 
-        <NavLink className="mb-3 underline hover:text-yellow-300" 
+        <NavLink className="mx-auto py-2 min-w-fit px-4 md:mb-2 text-center w-full text-blue-200 border-2 border-blue-200 rounded-2xl hover:text-yellow-300" 
         to="/">logout</NavLink>
 
       </div>

@@ -24,7 +24,7 @@ const BossesPage = () => {
       <div className="bg-slate-800/90 flex flex-row justify-evenly">
 
         <h2 className='
-        p-4 justify-center mx-auto
+        p-4 justify-center mx-auto my-4
         text-blue-200 text-xl w-screen md:text-3xl text-center font-press-start uppercase
         '>All Robot Masters</h2>
 
@@ -38,8 +38,8 @@ const BossesPage = () => {
           {
             data.map((d, ind) => (
           
-              <div className='flex flex-col items-center justify-center h-10' key={ind}>
-                <Link className="sm:text-2xl text-lg capitalize hover:text-blue-200/50" to={`/bosses/boss/${d._id}`}  ><strong>{d.name}</strong></Link>
+              <div className='flex flex-col items-center justify-center h-12' key={ind}>
+                <Link className="sm:text-3xl text-lg capitalize hover:text-blue-200/50" to={`/bosses/boss/${d._id}`}  ><strong>{d.name}</strong></Link>
               </div>
             ))
           }
@@ -49,7 +49,7 @@ const BossesPage = () => {
       
       <div className="bg-slate-800/90 flex flex-row p-2 md:justify-evenly justify-between uppercase font-press-start text-xs md:text-xl text-center  ">
   
-        <Link className='text-blue-200 underline hover:text-yellow-300' to="/bosses/createBoss">Add new Robot master</Link>
+        <Link className='mx-auto my-4 py-2 px-8 text-blue-200 border-2 border-blue-200 rounded-2xl hover:text-yellow-300' to="/bosses/createBoss">Add new Robot master</Link>
 
       </div>
 
