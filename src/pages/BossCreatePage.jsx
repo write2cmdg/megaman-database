@@ -19,8 +19,8 @@ const BossCreatePage = () => {
   
   const handleSubmit = (e) => {
     e.preventDefault()
-    axios.post('http://localhost:4000/', values)
-    .then(res => {navigate('/bosses')})
+    axios.post('http://localhost:4000/createBoss', values)
+    .then(res => {navigate('/allBosses')})
     .catch(err => setError(err.error.message));
   
   }

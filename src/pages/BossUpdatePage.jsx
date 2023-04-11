@@ -13,15 +13,15 @@ function BossUpdatePage() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    axios.get(`http://localhost:4000/${ id }`)
+    axios.get(`http://localhost:4000/oneBoss/${id}`)
     .then(res => setData(res.data))
     .catch(err => console.log(err));
     }, [])
-
+  
     function handleSubmit(e) {
       e.preventDefault()
-      axios.put(`http://localhost:4000/${id}`, values)
-      .then(res => navigate(`/bosses/boss/${id}`))
+      axios.put(`http://localhost:4000/updateBoss/${id}`, values)
+      .then(res => navigate(`/oneBoss/${id}`))
       .catch(err => console.log(err));
 
     }

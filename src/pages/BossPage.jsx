@@ -13,7 +13,7 @@ const BossPage = () => {
   const navigate = useNavigate('/bosses/')
 
   useEffect(() => {
-  axios.get('http://localhost:4000/'+ id)
+  axios.get('http://localhost:4000/oneBoss/'+ id)
   .then(res => setData(res.data))
   .catch(err => console.log(err));
   }, [])
@@ -22,8 +22,8 @@ const BossPage = () => {
 
     const confirm = window.confirm(`Delete Robot Master: ${data.name} Permanently?`);
     if(confirm) {
-      axios.delete('http://localhost:4000/'+ id)
-      .then(res => navigate(`/bosses/`))
+      axios.delete('http://localhost:4000/deleteBoss/'+ id)
+      .then(res => navigate(`/allBosses/`))
       .catch(err => console.log(err));
     }
   }
@@ -59,7 +59,7 @@ const BossPage = () => {
       
       <div className="bg-slate-800/90 flex flex-row p-2 md:justify-evenly justify-between uppercase font-press-start text-xs md:text-xl text-center">
 
-        <Link className='text-blue-200 underline hover:text-yellow-300' to={`/bosses/boss/updateBoss/${id} `}>update</Link>
+        <Link className='text-blue-200 underline hover:text-yellow-300' to={`/updateBoss/${id} `}>update</Link>
         <button onClick={e => handleDelete(data._id)} className='font-extrabold text-lg text-red-800 underline hover:text-yellow-300 uppercase'>delete</button>
 
       </div>

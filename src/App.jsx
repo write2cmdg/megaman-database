@@ -31,41 +31,45 @@ const router = createBrowserRouter([
     element: <Main />,
     children: [
       {
-        path: "/games",
+        path: "/allGames",
         element: <GamesPage />
       },
       {
-        path: "/bosses",
+        path: "/allBosses",
         element: <BossesPage />,
       },
       {
-        path: "/bosses/boss/:id",
+        path: "/oneBoss/:id",
         element: <BossPage />
       }, 
       {
-        path: "/bosses/createBoss",
+        path: "/createBoss",
         element: <BossCreatePage />
       }, 
       {
-        path: "/bosses/boss/updateBoss/:id",
+        path: "/updateBoss/:id",
         element: <BossUpdatePage />
       },
       {
-        path: "/bosses/boss/deleteBoss/:id",
-        element: <p>Boss Delete</p>
+        path: "/deleteBoss/:id",
+        element: <p>Boss Deleted</p>
       },
       {
-        path: "/games/game",
+        path: "/allGames",
         element: <GamePage />
       }, 
       {
-        path: "/games/createGame",
+        path: "/createGame",
         element: <GameCreatePage />
       }, 
       {
-        path: "/games/game/updateGame",
+        path: "/updateGame/:id",
         element: <GameUpdatePage />
       },
+      {
+        path: "/deleteGame/:id",
+        element: <p>Game Deleted</p>
+      }
     ]
   },
 ])

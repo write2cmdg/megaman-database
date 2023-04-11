@@ -11,7 +11,7 @@ const GamesPage = () => {
   const [ data, setData] = useState([])
 
   useEffect(() => {
-  axios.get('http://localhost:4000/')
+  axios.get('http://localhost:4000/allGames')
   .then(res => setData(res.data))
   .catch(err => console.log(err));
   }, [])
@@ -39,7 +39,7 @@ const GamesPage = () => {
             data.map((d, ind) => (
           
               <div className='flex flex-col items-center justify-center h-12' key={ind}>
-                <Link className="sm:text-3xl text-lg capitalize hover:text-blue-200/50" to={`/bosses/boss/${d._id}`}  ><strong>{d.name}</strong></Link>
+                <Link className="sm:text-3xl text-lg capitalize hover:text-blue-200/50" to={`/oneGame/${d._id}`}  ><strong>{d.name}</strong></Link>
               </div>
             ))
           }
