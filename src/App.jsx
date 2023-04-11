@@ -55,7 +55,7 @@ const router = createBrowserRouter([
         element: <p>Boss Deleted</p>
       },
       {
-        path: "/allGames",
+        path: "/oneGame/:id",
         element: <GamePage />
       }, 
       {

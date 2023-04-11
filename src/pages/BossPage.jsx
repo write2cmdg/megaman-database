@@ -10,7 +10,7 @@ const BossPage = () => {
 
   const [ data, setData] = useState([])
   const { id } = useParams();
-  const navigate = useNavigate('/bosses/')
+  const navigate = useNavigate('/allBosses/')
 
   useEffect(() => {
   axios.get('http://localhost:4000/oneBoss/'+ id)
