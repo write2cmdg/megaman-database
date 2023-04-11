@@ -52,8 +52,8 @@ function BossUpdatePage() {
           </div>
 
           <div className="mb-2 flex flex-row justify-around">
-            <label className='w-1/2 font-press-start' htmlFor="HP">HP: </label>
-            <input className='w-1/2 pl-3 bg-blue-200 text-blue-900 capitalize border-blue-900 border-4 p-1 rounded-lg' type="text" name="HP" placeholder={data.hp} onChange={e => setValues({...values, HP: e.target.value})} />
+            <label className='w-1/2 font-press-start' htmlFor="hp">hp: </label>
+            <input className='w-1/2 pl-3 bg-blue-200 text-blue-900 capitalize border-blue-900 border-4 p-1 rounded-lg' type="text" name="hp" placeholder={data.hp} onChange={e => setValues({...values, hp: e.target.value})} />
           </div>
 
           <div className="mb-2 flex flex-row justify-around">
