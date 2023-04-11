@@ -8,7 +8,7 @@ const BossCreatePage = () => {
   
   const [values, setValues] = useState({
     name: '',
-    HP: '',
+    hp: '',
     weapon: '',
     attack: '',
     weakness: '',
@@ -21,7 +21,7 @@ const BossCreatePage = () => {
     e.preventDefault()
     axios.post('http://localhost:4000/createBoss', values)
     .then(res => {navigate('/allBosses')})
-    .catch(err => setError(err.error.message));
+    .catch(err => console.log(err));
   
   }
 
@@ -42,7 +42,7 @@ const BossCreatePage = () => {
 
       <div className='text-blue-200 font-bold bg-slate-800/90'>
 
-        <Form onSubmit={handleSubmit} className="px-8 sm:w-3/4 md:w-1/2 w-screen p-2 flex flex-col text-left mx-auto uppercase">
+        <Form onSubmit={handleSubmit} className="px-8 sm:w-3/4 xl:w-1/2 w-screen p-2 flex flex-col text-left mx-auto uppercase">
 
           <div className="mb-2 flex flex-row justify-between">
             <label className='w-1/3 font-press-start' htmlFor="name">Name: </label>
@@ -50,8 +50,8 @@ const BossCreatePage = () => {
           </div>
 
           <div className="mb-2 flex flex-row justify-between">
-            <label className='w-1/3 font-press-start' htmlFor="HP">HP: </label>
-            <input className='w-1/2 pl-3 bg-blue-200 text-blue-900 capitalize border-blue-900 border-4 p-1 rounded-lg' type="text" name="HP" id="HP" placeholder='Required'  onChange={e => setValues({...values, HP: e.target.value})} />
+            <label className='w-1/3 font-press-start' htmlFor="hp">hp: </label>
+            <input className='w-1/2 pl-3 bg-blue-200 text-blue-900 capitalize border-blue-900 border-4 p-1 rounded-lg' type="text" name="hp" id="hp" placeholder='Required'  onChange={e => setValues({...values, hp: e.target.value})} />
           </div>
 
           <div className="mb-2 flex flex-row justify-between">

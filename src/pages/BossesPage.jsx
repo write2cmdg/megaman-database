@@ -49,7 +49,7 @@ const BossesPage = () => {
       
       <div className="bg-slate-800/90 flex flex-row p-2 md:justify-evenly justify-between uppercase font-press-start text-xs md:text-xl text-center  ">
   
-        <Link className='mx-auto my-4 py-2 px-8 text-blue-200 border-2 border-blue-200 rounded-2xl hover:text-yellow-300' to="/bosses/createBoss">Add new Robot master</Link>
+        <Link className='mx-auto my-4 py-2 px-8 text-blue-200 border-2 border-blue-200 rounded-2xl hover:text-yellow-300' to="/createBoss">Add new Robot master</Link>
 
       </div>
 
