@@ -28,6 +28,8 @@ const BossPage = () => {
     }
   }
 
+  console.log(data)
+
   return (
 
     <div>
