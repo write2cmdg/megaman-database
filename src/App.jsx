@@ -43,6 +43,10 @@ const router = createBrowserRouter([
         element: <BossPage />
       }, 
       {
+        path: "/oneBoss/:name",
+        element: <BossPage />
+      }, 
+      {
         path: "/createBoss",
         element: <BossCreatePage />
       }, 
