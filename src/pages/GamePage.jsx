@@ -41,7 +41,7 @@ const GamePage = () => {
         <h2 className='
         p-4 justify-center mx-auto
         text-blue-200 text-xl w-screen md:text-3xl text-center font-press-start uppercase
-        '>Game: {data.title} </h2>
+        '>{data.title} </h2>
 
       </div>
 
