@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom/dist'
 import Separator from '../components/Separator'
+import { toast } from 'react-toastify'
 
 
 
@@ -25,6 +26,8 @@ const GamePage = () => {
       axios.delete('http://localhost:4000/deleteGame/'+ id)
       .then(res => navigate(`/allGames/`))
       .catch(err => console.log(err));
+      toast.success(`You've Permanently Deleted ${data.title}!`)
+
     }
   }
 

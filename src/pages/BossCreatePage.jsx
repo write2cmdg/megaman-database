@@ -2,7 +2,12 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Link, Form } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom/dist'
+
+//component imports
 import Separator from '../components/Separator'
+
+//library imports
+import { toast } from 'react-toastify'
 
 const BossCreatePage = () => {
   
@@ -22,6 +27,7 @@ const BossCreatePage = () => {
     axios.post('http://localhost:4000/createBoss', values)
     .then(res => {navigate('/allBosses')})
     .catch(err => console.log(err));
+    toast.success("You've Created a New Robot Master!")
   
   }
 

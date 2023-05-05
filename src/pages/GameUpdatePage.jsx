@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { Form, useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom/dist';
 import Separator from '../components/Separator'
+import { toast } from 'react-toastify';
 
 function GameUpdatePage() {
 
@@ -23,6 +24,8 @@ function GameUpdatePage() {
       axios.put(`http://localhost:4000/updateGame/${id}`, values)
       .then(res => navigate(`/oneGame/${id}`))
       .catch(err => console.log(err));
+      toast.success(`You've Successfully Updated ${data.title}!`)
+
 
     }
   

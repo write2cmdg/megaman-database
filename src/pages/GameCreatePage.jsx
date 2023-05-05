@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, Form } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom/dist'
 import Separator from '../components/Separator'
+import { toast } from 'react-toastify'
 
 const GameCreatePage = () => {
   
@@ -20,6 +21,8 @@ const GameCreatePage = () => {
     axios.post('http://localhost:4000/createGame', values)
     .then(res => {navigate('/allGames')})
     .catch(err => console.log(err));
+    toast.success(`You've Created a New Game!`)
+
   
   }
 

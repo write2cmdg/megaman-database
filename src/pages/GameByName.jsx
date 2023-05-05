@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom/dist'
 import Separator from '../components/Separator'
+import { toast } from 'react-toastify'
 
 
 
@@ -35,6 +36,8 @@ const handleDelete = (id) => {
         axios.delete('http://localhost:4000/deleteBoss/'+ id)
         .then(response => navigate(`/allBosses/`))
         .catch(err => console.log(err));
+        toast.success(`You've Permanently Deleted ${data.title}!`)
+    
     }
 }
 

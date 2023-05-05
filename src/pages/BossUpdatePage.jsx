@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { Form, useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom/dist';
 import Separator from '../components/Separator'
+import { toast } from 'react-toastify';
 
 function BossUpdatePage() {
 
@@ -23,6 +24,8 @@ function BossUpdatePage() {
       axios.put(`http://localhost:4000/updateBoss/${id}`, values)
       .then(res => navigate(`/oneBoss/${id}`))
       .catch(err => console.log(err));
+      toast.success(`You've Updated ${data.name}!`)
+      
 
     }
   
