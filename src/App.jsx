@@ -9,12 +9,14 @@ import NavBar from "./components/NavBar";
 //Pages imports
 import BossesPage from "./pages/BossesPage";
 import BossPage from "./pages/BossPage";
+import BossByNamePage from "./pages/BossByNamePage";
 import BossUpdatePage from "./pages/BossUpdatePage";
 import BossCreatePage from "./pages/BossCreatePage";
 import GamesPage from "./pages/GamesPage";
 import GamePage from "./pages/GamePage";
 import GameCreatePage from "./pages/GameCreatePage";
 import GameUpdatePage from "./pages/GameUpdatePage";
+import GameByName from "./pages/GameByName";
 
 //Library imports
 import { ToastContainer } from 'react-toastify';
@@ -43,6 +45,10 @@ const router = createBrowserRouter([
         element: <BossPage />
       }, 
       {
+        path: "/oneBossByName/:id",
+        element: <BossByNamePage />
+      }, 
+      {
         path: "/createBoss",
         element: <BossCreatePage />
       }, 
@@ -57,6 +63,10 @@ const router = createBrowserRouter([
       {
         path: "/oneGame/:id",
         element: <GamePage />
+      }, 
+      {
+        path: "/oneGameByName/:id",
+        element: <GameByName />
       }, 
       {
         path: "/createGame",

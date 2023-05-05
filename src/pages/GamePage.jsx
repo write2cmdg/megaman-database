@@ -55,7 +55,7 @@ const GamePage = () => {
             <h2 className='capitalize'><strong className='uppercase font-press-start text-md align-middle'>Title:</strong> {title}</h2>
             <h2 className='capitalize'><strong className='uppercase font-press-start text-md align-middle'>Year:</strong> {year}</h2>
             <h2 className='capitalize'><strong className='uppercase font-press-start text-md align-middle'>Story:</strong> {story}</h2>
-            <h2 className='capitalize'><strong className='uppercase font-press-start text-md align-middle'>Robot Masters:</strong></h2>
+            <h2 className='capitalize'><strong className='uppercase font-press-start text-md align-middle'>Robot Masters:(Scroll Down)</strong></h2>
           
           </div>
 
@@ -65,7 +65,7 @@ const GamePage = () => {
                 bosses && bosses.map((boss, ind) => (
               
                   <div className='flex flex-col items-center justify-center h-12' key={ind}>
-                    <Link to={`/oneBoss/${boss.id}`}  className="sm:text-3xl text-lg capitalize hover:text-blue-200/50"><strong>{boss}</strong></Link>
+                    <Link to={`/oneBossByName/${boss}`}  className="sm:text-3xl text-lg capitalize hover:text-blue-200/50"><strong>{boss}</strong></Link>
                   </div>
                 ))
               }

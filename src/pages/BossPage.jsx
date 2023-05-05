@@ -10,7 +10,7 @@ const BossPage = () => {
 
   const [ data, setData] = useState([])
   const { id } = useParams();
-  const navigate = useNavigate('/allBosses/')
+  const navigate = useNavigate()
 
   useEffect(() => {
   axios.get('http://localhost:4000/oneBoss/'+ id)
@@ -19,7 +19,7 @@ const BossPage = () => {
   }, [])
 
   const handleDelete = (id) => {
-
+    
     const confirm = window.confirm(`Delete Robot Master: ${data.name} Permanently?`);
     if(confirm) {
       axios.delete('http://localhost:4000/deleteBoss/'+ id)
@@ -27,11 +27,12 @@ const BossPage = () => {
       .catch(err => console.log(err));
     }
   }
-
-  console.log(data)
-
+  
+  const imgName = data.name
+  
+  
   return (
-
+    
     <div>
 
       <Separator />
@@ -41,11 +42,11 @@ const BossPage = () => {
         <h2 className='
         p-4 justify-center mx-auto
         text-blue-200 text-xl w-screen md:text-3xl text-center font-press-start uppercase
-        '>Robot Master: {data.name} </h2>
+        '>{data.name} </h2>
 
       </div>
 
-      <div className='lg:h-80 h-44  bg-slate-800/90 overflow-hidden overflow-y-auto scrollbar scrollbar-rounded-large scrollbar-thumb-blue-900 scrollbar-track-blue-900/40 hover:scrollbar-thumb-blue-200/50'>
+      <div className='py-8 flex flex-row justify-evenly lg:h-80 h-44  bg-slate-800/90 overflow-hidden overflow-y-auto scrollbar scrollbar-rounded-large scrollbar-thumb-blue-900 scrollbar-track-blue-900/40 hover:scrollbar-thumb-blue-200/50'>
 
 
 
@@ -54,14 +55,23 @@ const BossPage = () => {
           <h2 className='capitalize'><strong className='uppercase font-press-start text-md align-middle'>weapon:</strong> {data.weapon}</h2>
           <h2 className='capitalize'><strong className='uppercase font-press-start text-md align-middle'>attack:</strong> {data.attack}</h2>
           <h2 className='capitalize'><strong className='uppercase font-press-start text-md align-middle'>weakness:</strong> {data.weakness}</h2>
-          <h2 className='capitalize'><strong className='uppercase font-press-start text-md align-middle'>game:</strong> {data.game}</h2>
+          <h2 className='capitalize'><strong className='uppercase font-press-start text-md align-middle'>game:</strong>  <Link to={`/oneGameByName/${data.game}`}  className="sm:text-3xl text-lg capitalize hover:text-blue-200/50">{data.game}</Link></h2>
         </div>
+
+        {data.name && (
+    
+          <img className='border-8 border-blue-600 rounded-lg' src={`/images/${imgName.replace(" M", "m")}.png`} alt={imgName.replace(" M", "m")} onError={(event) => event.target.style.display = 'none'}/>
+        
+        )}
+
+        
+  
 
       </div>
       
       <div className="bg-slate-800/90 flex flex-row p-2 md:justify-evenly justify-between uppercase font-press-start text-xs md:text-xl text-center">
 
-        <Link className='text-blue-200 underline hover:text-yellow-300' to={`/updateBoss/${id} `}>update</Link>
+        <Link className='text-lg text-blue-200 underline hover:text-yellow-300' to={`/updateBoss/${id} `}>update</Link>
         <button onClick={e => handleDelete(data._id)} className='font-extrabold text-lg text-red-800 underline hover:text-yellow-300 uppercase'>delete</button>
 
       </div>
