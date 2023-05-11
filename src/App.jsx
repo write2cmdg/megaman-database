@@ -25,6 +25,8 @@ import 'react-toastify/dist/ReactToastify.css';
 //layouts imports
 import Main from "./layouts/Main";
 import ProtectedRoutes from "./routes/ProtectedRoutes";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 
 
@@ -35,57 +37,89 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/allGames",
-        element: 
-        <ProtectedRoutes>
-          <GamesPage />,
-        </ProtectedRoutes>
+        element: <GamesPage />,
       },
       {
         path: "/allBosses",
-        element: 
-        <ProtectedRoutes>
-          <BossesPage />,
-        </ProtectedRoutes>
+        element: <BossesPage />,
       },
       {
         path: "/oneBoss/:id",
-        element: <BossPage />
+        element: 
+        <ProtectedRoutes>
+          <BossPage />,
+        </ProtectedRoutes>
       }, 
       {
         path: "/oneBossByName/:id",
-        element: <BossByNamePage />
+        element: 
+        <ProtectedRoutes>
+        <BossByNamePage />,
+      </ProtectedRoutes>
       }, 
       {
         path: "/createBoss",
-        element: <BossCreatePage />
+        element:
+        <ProtectedRoutes>
+         <BossCreatePage />,
+        </ProtectedRoutes>
       }, 
       {
         path: "/updateBoss/:id",
-        element: <BossUpdatePage />
+        element: 
+        <ProtectedRoutes>
+          <BossUpdatePage />,
+        </ProtectedRoutes>
       },
       {
         path: "/deleteBoss/:id",
-        element: <p>Boss Deleted</p>
+        element:
+        <ProtectedRoutes>
+         <p>Boss Deleted</p>,
+        </ProtectedRoutes>
       },
       {
         path: "/oneGame/:id",
-        element: <GamePage />
+        element: 
+        <ProtectedRoutes>
+        <GamePage />,
+      </ProtectedRoutes>
       }, 
       {
         path: "/oneGameByName/:id",
-        element: <GameByName />
+        element: 
+        <ProtectedRoutes>
+        <GameByName />,
+      </ProtectedRoutes>
       }, 
       {
         path: "/createGame",
-        element: <GameCreatePage />
+        element: 
+        <ProtectedRoutes>
+         <GameCreatePage />,
+        </ProtectedRoutes>
       }, 
       {
         path: "/updateGame/:id",
-        element: <GameUpdatePage />
+        element: 
+        <ProtectedRoutes>
+         <GameUpdatePage />,
+        </ProtectedRoutes>
       },
       {
         path: "/deleteGame/:id",
-        element: <p>Game Deleted</p>
+        element: 
+        <ProtectedRoutes>
+         <p>Game Deleted</p>,
+        </ProtectedRoutes>
+      },
+      {
+        path: "/login",
+        element: <Login />
+      },
+      {
+        path: "/register",
+        element: <Register />
       }
     ]
   },

@@ -28,14 +28,13 @@ fetchData();
 
 const handleDelete = (id) => {
     
-    const confirm = window.confirm(`Delete Robot Master: ${data.name} Permanently?`);
-    if(confirm) {
-        axios.delete('http://localhost:4000/deleteBoss/'+ id)
-        .then(response => navigate(`/allBosses/`))
-        .catch(err => console.log(err));
-      toast.success(`You've Permanently Deleted ${data.name}!`)
-
-    }
+  const confirm = window.confirm(`Delete Robot Master: ${data.name} Permanently?`);
+  if(confirm) {
+      axios.delete('http://localhost:4000/deleteBoss/'+ id)
+      .then(response => navigate(`/allBosses/`))
+      .catch(err => console.log(err));
+    toast.success(`You've Permanently Deleted ${data.name}!`)
+  }
 }
 
 const imgName = data.name
@@ -87,6 +86,7 @@ return (
         <div className="bg-slate-800/90 flex flex-row p-2 md:justify-evenly justify-between uppercase font-press-start text-xs md:text-xl text-center">
 
             <Link className=' text-lg text-blue-200 underline hover:text-yellow-300' to={`/updateBoss/${data._id} `}>update</Link>
+
             <button onClick={e => handleDelete(data._id)} className='font-extrabold text-lg text-red-800 underline hover:text-yellow-300 uppercase'>delete</button>
 
         </div>}

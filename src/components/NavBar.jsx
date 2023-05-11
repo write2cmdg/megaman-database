@@ -33,7 +33,7 @@ const NavBar = () => {
         to="/allBosses">ALL BOSSES</NavLink>
 
         <NavLink className="mx-auto py-2 min-w-fit px-4 md:mb-2 text-center w-full text-blue-200 border-2 border-blue-200 rounded-2xl hover:text-yellow-300" 
-        to="/">logout</NavLink>
+        to="/login">logout</NavLink>
 
       </div>
     
