@@ -3,7 +3,7 @@ import { Navigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const ProtectedRoutes = ({ children }) => {
-    const isAuthorized = false;
+    const isAuthorized = true;
 
     if(!isAuthorized){
         toast('Please Login')
