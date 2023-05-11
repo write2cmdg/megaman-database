@@ -61,11 +61,13 @@ const BossPage = () => {
           <h2 className='capitalize'><strong className='uppercase font-press-start text-md align-middle'>game:</strong>  <Link to={`/oneGameByName/${data.game}`}  className="sm:text-3xl text-lg capitalize hover:text-blue-200/50">{data.game}</Link></h2>
         </div>
 
-        {data.name && (
-    
-          <img className='border-8 border-blue-600 rounded-lg' src={`/images/${imgName.replace(" M", "m")}.png`} alt={imgName.replace(" M", "m")} onError={(event) => event.target.style.display = 'none'}/>
         
+          {data.name && (
+      
+            <img className='border-8 border-blue-600 rounded-lg' src={`/images/${imgName.replace(" M", "m")}.png`} alt={imgName.replace(" M", "m")} onError={(event) => event.target.style.display = 'none'}/>
+          
         )}
+      
 
         
   

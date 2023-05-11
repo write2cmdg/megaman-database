@@ -24,6 +24,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 //layouts imports
 import Main from "./layouts/Main";
+import ProtectedRoutes from "./routes/ProtectedRoutes";
 
 
 
@@ -34,11 +35,17 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/allGames",
-        element: <GamesPage />
+        element: 
+        <ProtectedRoutes>
+          <GamesPage />,
+        </ProtectedRoutes>
       },
       {
         path: "/allBosses",
-        element: <BossesPage />,
+        element: 
+        <ProtectedRoutes>
+          <BossesPage />,
+        </ProtectedRoutes>
       },
       {
         path: "/oneBoss/:id",
@@ -85,6 +92,7 @@ const router = createBrowserRouter([
 ])
 
 function App() {
+
   return <div className="App">
     <RouterProvider router={router} />
     <ToastContainer />
