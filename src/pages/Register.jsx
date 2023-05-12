@@ -1,15 +1,17 @@
 import React, { useState } from 'react'
 import { Form, Link } from 'react-router-dom'
 import Separator from '../components/Separator'
+import { useRegister } from '../hooks/useRegister'
 
 const Register = () => {
 
   const [ email, setEmail] = useState('')
   const [ password, setPassword] = useState('')
+  const { register, error, isLoading } = useRegister()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log(email, password)
+    await register(email, password)
   }
 
   return (
@@ -41,7 +43,9 @@ const Register = () => {
                 <input className='w-1/2 pl-3 bg-blue-200 text-blue-900 capitalize border-blue-900 border-4 p-1 rounded-lg' type="password" name="password" id="password" placeholder='Required'  onChange={(e) => setPassword(e.target.value)} value={password} />
               </div>
 
-              <button className="uppercase mt-8 font-press-start text-lg hover:text-yellow-200 hover:bg-red-800 hover:border-red-900 text-blue-200 capitalize bg-blue-900 my-2 border-blue-900 border-4 p-1 rounded-lg">sign up</button>
+              <button disabled={isLoading} className="uppercase mt-8 font-press-start text-lg hover:text-yellow-200 hover:bg-red-800 hover:border-red-900 text-blue-200 capitalize bg-blue-900 my-2 border-blue-900 border-4 p-1 rounded-lg">sign up</button>
+
+              { error && <div>{error}</div>}
 
 
             </Form>

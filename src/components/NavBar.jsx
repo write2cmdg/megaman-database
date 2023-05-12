@@ -1,9 +1,17 @@
 // rrd imports
 import { Form, NavLink } from "react-router-dom"
 import Separator from "./Separator"
+import useLogout from "../hooks/useLogout"
 
 
 const NavBar = () => {
+
+  const {logout} = useLogout()
+  const handleClick = () => {
+    logout()
+  }
+
+
   return (
 
     
@@ -33,7 +41,7 @@ const NavBar = () => {
         to="/allBosses">ALL BOSSES</NavLink>
 
         <NavLink className="mx-auto py-2 min-w-fit px-4 md:mb-2 text-center w-full text-blue-200 border-2 border-blue-200 rounded-2xl hover:text-yellow-300" 
-        to="/login">logout</NavLink>
+        to="/login" onClick={handleClick}>logout</NavLink>
 
       </div>
     

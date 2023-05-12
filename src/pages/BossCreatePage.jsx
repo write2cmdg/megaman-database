@@ -28,7 +28,6 @@ const BossCreatePage = () => {
     .then(res => {navigate('/allBosses')})
     .catch(err => console.log(err));
     toast.success("You've Created a New Robot Master!")
-  
   }
 
   return (
