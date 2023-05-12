@@ -9,15 +9,18 @@ import Separator from '../components/Separator'
 
 const BossesPage = () => {
   const [ data, setData] = useState([])
-
+  
   useEffect(() => {
   axios.get('http://localhost:4000/allBosses')
   .then(res => setData(res.data))
   .catch(err => console.log(err));
   }, [])
+
+  
+  
   
   return (
-
+    
     <div>
       <Separator />
 
@@ -34,12 +37,25 @@ const BossesPage = () => {
 
 
 
-        <div className='text-blue-200'>
+        <div className='w-full text-blue-200'>
           {
             data.map((d, ind) => (
-          
-              <div className='flex flex-col items-center justify-center h-12' key={ind}>
-                <Link className="sm:text-3xl text-lg capitalize hover:text-blue-200/50" to={`/oneBoss/${d._id}`}  ><strong>{d.name}</strong></Link>
+              
+              <div className='w-full flex flex-col items-center justify-center h-32' key={ind}>
+
+                <div className='w-3/4 flex flex-row justify-around items-center'>
+                  <Link className="basis-1/2 sm:text-3xl text-lg capitalize hover:text-blue-200/50" to={`/oneBoss/${d._id}`}  ><strong>{d.name}</strong></Link>
+                  <div className='basis-1/4 '>
+                    {d.name && (
+                      
+                      <img className='mb-4 sm:w-2/3 w-full border-2 border-blue-600 rounded-lg' src={`/images/${d.name.replace(" M", "m")}.png`} onError={(event) => event.target.style.display = 'none'}/>
+                      
+                      )}
+                  </div>
+
+                </div>
+
+
               </div>
             ))
           }
