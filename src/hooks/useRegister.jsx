@@ -1,11 +1,15 @@
 import { useState } from "react";
 import { useAuthContext } from './useAuthContext';
 import axios from 'axios';
+import { useNavigate } from "react-router-dom";
+
 
 export const useRegister = () => {
     const [error, setError] = useState(null)
     const [isLoading, setIsLoading] = useState(null)
     const { dispatch } = useAuthContext()
+    const navigate = useNavigate()
+    const { user } = useAuthContext()
 
     const register = async (email, password) => {
         setIsLoading(true)
@@ -30,6 +34,10 @@ export const useRegister = () => {
             setIsLoading(false);
             setError(error.message);
         }
+    }
+
+    if (user) {
+        navigate("/allBosses");  
     }
 
     return { register, isLoading, error }
