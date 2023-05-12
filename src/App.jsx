@@ -34,92 +34,87 @@ import Register from "./pages/Register";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: 
-      <Main />,
+    element: <Main />,
     children: [
       {
         path: "/allGames",
         element: 
         <ProtectedRoutes>
-        <GamesPage />,
+        <GamesPage />
       </ProtectedRoutes>
       },
       {
         path: "/allBosses",
         element: 
         <ProtectedRoutes>
-        <BossesPage />,
+        <BossesPage />
       </ProtectedRoutes>
       },
       {
         path: "/oneBoss/:id",
         element: 
         <ProtectedRoutes>
-          <BossPage />,
+          <BossPage />
         </ProtectedRoutes>
       }, 
       {
         path: "/oneBossByName/:id",
         element: 
         <ProtectedRoutes>
-        <BossByNamePage />,
+        <BossByNamePage />
       </ProtectedRoutes>
       }, 
       {
         path: "/createBoss",
         element:
         <ProtectedRoutes>
-         <BossCreatePage />,
+         <BossCreatePage />
         </ProtectedRoutes>
       }, 
       {
         path: "/updateBoss/:id",
         element: 
         <ProtectedRoutes>
-          <BossUpdatePage />,
+          <BossUpdatePage />
         </ProtectedRoutes>
       },
       {
         path: "/deleteBoss/:id",
         element:
-        <ProtectedRoutes>
-         <p>Boss Deleted</p>,
-        </ProtectedRoutes>
+         <p>Boss Deleted</p>
       },
       {
         path: "/oneGame/:id",
         element: 
         <ProtectedRoutes>
-        <GamePage />,
+        <GamePage />
       </ProtectedRoutes>
       }, 
       {
         path: "/oneGameByName/:id",
         element: 
         <ProtectedRoutes>
-        <GameByName />,
+        <GameByName />
       </ProtectedRoutes>
       }, 
       {
         path: "/createGame",
         element: 
         <ProtectedRoutes>
-         <GameCreatePage />,
+         <GameCreatePage />
         </ProtectedRoutes>
       }, 
       {
         path: "/updateGame/:id",
         element: 
         <ProtectedRoutes>
-         <GameUpdatePage />,
+         <GameUpdatePage />
         </ProtectedRoutes>
       },
       {
         path: "/deleteGame/:id",
         element: 
-        <ProtectedRoutes>
          <p>Game Deleted</p>,
-        </ProtectedRoutes>
       },
       {
         path: "/login",

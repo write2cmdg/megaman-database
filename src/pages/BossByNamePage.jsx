@@ -48,7 +48,7 @@ return (
     
     <div>
 
-      <Separator />
+      <Separator className="mb-auto" />
 
       {data &&
 
@@ -92,7 +92,7 @@ return (
         </div>}
       
 
-      <Separator />
+      <Separator className="mt-auto"/>
 
     </div>
   )

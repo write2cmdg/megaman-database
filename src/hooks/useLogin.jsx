@@ -8,6 +8,8 @@ export const useLogin = () => {
     const [isLoading, setIsLoading] = useState(false)
     const { dispatch } = useAuthContext()
     const navigate = useNavigate()
+  const { user } = useAuthContext()
+
     
     
     
@@ -31,16 +33,16 @@ export const useLogin = () => {
             
             setIsLoading(false);
             
-            if (response) {
-                navigate('/allBosses')
-            }
-                
-            
+            console.log("Navigating to /allBosses");
             
         } catch (error) {
             setIsLoading(false);
             setError(error.message);
         }
+    }
+    
+    if (user) {
+        navigate("/allBosses");  
     }
     
     

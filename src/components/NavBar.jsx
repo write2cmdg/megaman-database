@@ -2,7 +2,6 @@
 import { NavLink } from "react-router-dom"
 import useLogout from "../hooks/useLogout"
 import { useAuthContext } from "../hooks/useAuthContext"
-import Login from "../pages/Login"
 
 
 const NavBar = () => {
@@ -23,7 +22,7 @@ const NavBar = () => {
     <div className="
     w-full flex flex-col items-center justify-evenly
     font-press-start uppercase
-    text-blue-100 mb-8
+    text-blue-100 pb-8
     ">
 
       <div className="
