@@ -1,6 +1,9 @@
 import { createContext, useReducer, useEffect } from "react";
+import Login from "../pages/Login";
 
 export const AuthContext = createContext()
+let isAuth = false
+
 
 export const authReducer = (state, action) => {
     switch (action.type) {
@@ -8,29 +11,33 @@ export const authReducer = (state, action) => {
             return { user: action.payload }
         case 'LOGOUT':
             return  { user: null }
-        default:
+            default:
             return state
     }
 }
-
+            
 export const AuthContextProvider = ({ children }) => {
+    
     const [state, dispatch] = useReducer(authReducer, {
         user: null
     })
-
+    
     useEffect(() => {
         const user = JSON.parse(localStorage.getItem('user'))
-
+        console.log(user)
+        
         if (user) {
+            isAuth = true;
             dispatch({ type: 'LOGIN', payload: user})
         }
+        console.log(isAuth)
+        
     }, [])
-
-    console.log('AuthContext state: ', state)
-
+    
     return (
         <AuthContext.Provider value={{...state, dispatch}}>
             { children }
+            {/* { isAuth ? children : <Login /> } */}
         </AuthContext.Provider>
     )
 }
