@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import { Navigate } from 'react-router-dom';
 import { useAuthContext } from "../hooks/useAuthContext"
-import { toast } from 'react-toastify';
 
 
 
@@ -14,11 +13,12 @@ const ProtectedRoutes = ({ children }) => {
     if(!user) {
       <Navigate to={"/Login"} />
     }
-    toast('Please Login or Register')
   }, [])
   
-    
-    return children
-  }
   
+
+  return children
+}
+
+
 export default ProtectedRoutes

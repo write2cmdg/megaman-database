@@ -75,7 +75,10 @@ return (
             </div>
 
             {data.name && (
-             <img className='border-8 border-blue-600 rounded-lg' src={`/images/${imgName.replace(" M", "m")}.png`} alt={imgName.replace(" M", "m")} onError={(event) => event.target.style.display = 'none'} />
+             <img className='border-8 border-blue-600 rounded-lg' src={`/images/${imgName.replace(" M", "m")}.png`} alt='' onError={({currentTarget}) => {
+              currentTarget.onError = null;
+              currentTarget.src="/images/Dr_Wily.png";
+            }} />
             )}
 
         </div>

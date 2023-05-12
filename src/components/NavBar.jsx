@@ -38,14 +38,17 @@ const NavBar = () => {
       ">
 
 
-        { !user && (
-        <NavLink className="mx-auto py-2 min-w-fit px-4 md:mb-2 text-center w-full text-blue-200 border-2 border-blue-200 rounded-2xl hover:text-yellow-300" 
-        to="/register">Register</NavLink>
-        )}
-        { !user && (
-        <NavLink className="mx-auto py-2 min-w-fit px-4 md:mb-2 text-center w-full text-blue-200 border-2 border-blue-200 rounded-2xl hover:text-yellow-300" 
-        to="/login">Login</NavLink>
-        )}
+        <div className="h-full flex flex-col">
+          { !user && (
+          <NavLink className="mx-auto py-2 min-w-fit px-4 md:mb-2 text-center w-full text-blue-200 border-2 border-blue-200 rounded-2xl hover:text-yellow-300"
+          to="/register">Register</NavLink>
+          )}
+          { !user && (
+          <NavLink className="mx-auto py-2 min-w-fit px-4 md:mb-2 text-center w-full text-blue-200 border-2 border-blue-200 rounded-2xl hover:text-yellow-300"
+          to="/login">Login</NavLink>
+          )}
+        </div>
+
         { user && (
         <NavLink className="mx-auto py-2 min-w-fit px-4 md:mb-2 text-center w-full text-blue-200 border-2 border-blue-200 rounded-2xl hover:text-yellow-300" 
         to="/allGames">ALL GAMES</NavLink>
