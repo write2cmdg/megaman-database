@@ -1,16 +1,27 @@
 import React from 'react'
 import { Navigate } from 'react-router-dom';
+import { useAuthContext } from "../hooks/useAuthContext"
 import { toast } from 'react-toastify';
 
+
+
 const ProtectedRoutes = ({ children }) => {
-    const isAuthorized = true;
 
-    if(!isAuthorized){
-        toast('Please Login')
-        return <Navigate to={"/Login"} />
+  let isAuthorized = false;
+  const { user } = useAuthContext()
+
+  if (user) {
+    isAuthorized = true
+  }
+
+  if(!isAuthorized){
+    return (
+      <Navigate to={"/Login"} />
+      )
     }
-
-  return children
-}
-
+    
+    return children
+  }
+  toast('Please Login or Register')
+  
 export default ProtectedRoutes

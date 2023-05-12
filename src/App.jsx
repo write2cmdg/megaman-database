@@ -34,15 +34,22 @@ import Register from "./pages/Register";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Main />,
+    element: 
+      <Main />,
     children: [
       {
         path: "/allGames",
-        element: <GamesPage />,
+        element: 
+        <ProtectedRoutes>
+        <GamesPage />,
+      </ProtectedRoutes>
       },
       {
         path: "/allBosses",
-        element: <BossesPage />,
+        element: 
+        <ProtectedRoutes>
+        <BossesPage />,
+      </ProtectedRoutes>
       },
       {
         path: "/oneBoss/:id",
