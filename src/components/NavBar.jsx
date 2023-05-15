@@ -1,10 +1,13 @@
 // rrd imports
-import { NavLink } from "react-router-dom"
+import { NavLink, Navigate, useNavigate } from "react-router-dom"
 import useLogout from "../hooks/useLogout"
 import { useAuthContext } from "../hooks/useAuthContext"
+import { useEffect } from "react";
 
 
 const NavBar = () => {
+  const navigate = useNavigate();
+
 
   const {logout} = useLogout()
 
@@ -13,6 +16,13 @@ const NavBar = () => {
   const handleClick = () => {
     logout()
   }
+
+  useEffect(() => {
+   
+    if(!user) {
+     navigate("/Login")
+     }
+  }, []);  
 
 
   return (
@@ -37,17 +47,6 @@ const NavBar = () => {
       flex flex-col md:flex-row md:gap-2 justify-evenly mb-6 md:mx-0 mx-8 content-around
       ">
 
-
-        <div className="h-full flex flex-col">
-          { !user && (
-          <NavLink className="mx-auto py-2 min-w-fit px-4 md:mb-2 text-center w-full text-blue-200 border-2 border-blue-200 rounded-2xl hover:text-yellow-300"
-          to="/register">Register</NavLink>
-          )}
-          { !user && (
-          <NavLink className="mx-auto py-2 min-w-fit px-4 md:mb-2 text-center w-full text-blue-200 border-2 border-blue-200 rounded-2xl hover:text-yellow-300"
-          to="/login">Login</NavLink>
-          )}
-        </div>
 
         { user && (
         <NavLink className="mx-auto py-2 min-w-fit px-4 md:mb-2 text-center w-full text-blue-200 border-2 border-blue-200 rounded-2xl hover:text-yellow-300" 
