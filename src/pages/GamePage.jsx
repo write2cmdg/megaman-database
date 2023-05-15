@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, Navigate, useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom/dist'
 import Separator from '../components/Separator'
 import { toast } from 'react-toastify'
@@ -17,19 +17,24 @@ const GamePage = () => {
   axios.get('http://localhost:4000/oneGame/'+ id)
   .then(res => setData(res.data))
   .catch(err => console.log(err));
-  }, [])
+}, [])
 
+if (!data.title) {
+  <Navigate to="/noGame" />;
+}
+  
   const handleDelete = (id) => {
-
+    
     const confirm = window.confirm(`Delete Game: ${data.title} Permanently?`);
     if(confirm) {
       axios.delete('http://localhost:4000/deleteGame/'+ id)
       .then(res => navigate(`/allGames/`))
       .catch(err => console.log(err));
       toast.success(`You've Permanently Deleted ${data.title}!`)
-
+      
     }
   }
+
 
   const { title, year, story, bosses } = data
 
