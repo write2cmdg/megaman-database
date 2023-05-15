@@ -65,31 +65,40 @@ const handleDelete = (id) => {
 
 
 
-            <div className='h-full text-blue-200 p-4 text-sm lg:text-xl flex flex-col ml-8 justify-evenly'>
+             <div className='h-full text-blue-200 p-4 text-sm lg:text-xl flex flex-col ml-8 justify-evenly'>
 
-            <div>
+              <div>
                 <h2 className='capitalize'><strong className='uppercase font-press-start text-md align-middle'>Title:</strong> {data.title}</h2>
                 <h2 className='capitalize'><strong className='uppercase font-press-start text-md align-middle'>Year:</strong> {data.year}</h2>
                 <h2 className='capitalize'><strong className='uppercase font-press-start text-md align-middle'>Story:</strong> {data.story}</h2>
-                <h2 className='capitalize'><strong className='uppercase font-press-start text-md align-middle'>Robot Masters:(Scroll Down) </strong></h2>
-            
-            </div>
+                <h2 className='capitalize'><strong className='uppercase font-press-start text-md align-middle'>Robot Masters:(<span className='text-yellow-200'>Scroll Down</span>) </strong></h2>
+              
+              </div> 
 
-            </div>
-                <div className='text-blue-200'>
-                {
+              </div>
+
+                <div className='text-blue-200 flex flex-col justify-around items-center'>
+                  {
                     data.bosses && data.bosses.map((boss, ind) => (
                 
-                    <div className='flex flex-col items-center justify-center h-12' key={ind}>
-                        <Link to={`/oneBossByName/${boss}`}  className="sm:text-3xl text-lg capitalize hover:text-blue-200/50"><strong>{boss}</strong></Link>
+                    <div className='w-3/4 flex flex-row justify-evenly items-center'>
+
+                      <Link to={`/oneBossByName/${boss}`}  className="mx-auto basis-1/2 sm:text-3xl text-lg capitalize hover:text-blue-200/50" ><strong>{boss}</strong></Link>
+                    
+                      <img className='mx-auto grow-0 h-24 border-2 border-blue-600 rounded-lg' src={`/images/${boss.replace(" M", "m")}.png`} onError={({currentTarget}) => {
+                        currentTarget.onError = null;
+                        currentTarget.src="/images/Dr_Wily.png";
+                      }}/>
+
                     </div>
-                    ))
-                }
+                    
+                    ))                      
+                  }
                 </div>
 
-            
+              
 
-            </div>
+              </div>
         }
 
         {data &&

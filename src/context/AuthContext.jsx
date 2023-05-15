@@ -1,5 +1,6 @@
 import { createContext, useReducer, useEffect } from "react";
 import Login from "../pages/Login";
+import { Navigate } from "react-router-dom";
 
 export const AuthContext = createContext()
 let isAuth = false
@@ -24,13 +25,12 @@ export const AuthContextProvider = ({ children }) => {
     
     useEffect(() => {
         const user = JSON.parse(localStorage.getItem('user'))
-        console.log(user)
         
         if (user) {
             isAuth = true;
             dispatch({ type: 'LOGIN', payload: user})
         }
-        console.log(isAuth)
+ 
         
     }, [])
     

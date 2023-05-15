@@ -41,7 +41,7 @@ const router = createBrowserRouter([
         element: 
         <ProtectedRoutes>
         <GamesPage />
-      </ProtectedRoutes>
+        </ProtectedRoutes>
       },
       {
         path: "/allBosses",

@@ -15,15 +15,16 @@ const GameCreatePage = () => {
   })
   
   const navigate = useNavigate()
+
   
   const handleSubmit = (e) => {
     e.preventDefault()
-    axios.post('http://localhost:4000/createGame', values)
-    .then(res => {navigate('/allGames')})
-    .catch(err => console.log(err));
+    const bossesArray = values.bosses.split(',').map(boss => boss.trim())
+    const newValues = { ...values, bosses: bossesArray }
+    axios.post('http://localhost:4000/createGame', newValues)
+      .then(res => navigate('/allGames'))
+      .catch(err => console.log(err))
     toast.success(`You've Created a New Game!`)
-
-  
   }
 
   return (

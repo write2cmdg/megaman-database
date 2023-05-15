@@ -8,13 +8,11 @@ const ProtectedRoutes = ({ children }) => {
 
   const { user } = useAuthContext()
 
-  
-  useEffect(() => {
-    if(!user) {
-      <Navigate to={"/Login"} />
-    }
-  }, [])
-  
+
+  if(!user) {
+
+   return <Navigate to={"/Login"} />
+  }
   
 
   return children

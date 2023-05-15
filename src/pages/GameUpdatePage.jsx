@@ -21,12 +21,12 @@ function GameUpdatePage() {
   
     function handleSubmit(e) {
       e.preventDefault()
-      axios.put(`http://localhost:4000/updateGame/${id}`, values)
+      const bossesArray = values.bosses.split(',').map(boss => boss.trim()) // convert comma-separated string to array
+      const updatedValues = {...values, bosses: bossesArray} // update values object with new array
+      axios.put(`http://localhost:4000/updateGame/${id}`, updatedValues)
       .then(res => navigate(`/oneGame/${id}`))
       .catch(err => console.log(err));
       toast.success(`You've Successfully Updated ${data.title}!`)
-
-
     }
   
 
