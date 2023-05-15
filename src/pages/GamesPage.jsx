@@ -38,7 +38,7 @@ const GamesPage = () => {
           {
             data.map((d, ind) => (
           
-              <div className='flex flex-col items-center justify-center h-12' key={ind}>
+              <div className='w-3/4 ml-auto flex flex-col items-start justify-center h-12' key={ind}>
                 <Link className="sm:text-3xl text-lg capitalize hover:text-blue-200/50" to={`/oneGame/${d._id}`}  ><strong>{d.title}</strong></Link>
               </div>
             ))

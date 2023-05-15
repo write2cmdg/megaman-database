@@ -49,7 +49,7 @@ const BossesPage = () => {
                   <div className='basis-1/4 '>
                     {d.name && (
                       
-                      <img className='mx-auto grow-0 h-24 border-2 border-blue-600 rounded-lg' src={`/images/${d.name.replace(" M", "m")}.png`} onError={({currentTarget}) => {
+                      <img className='mx-auto grow-0 max-h-24 border-2 border-blue-600 rounded-lg' src={`/images/${d.name.replace(" M", "m")}.png`} onError={({currentTarget}) => {
                         currentTarget.onError = null;
                         currentTarget.src="/images/Dr_Wily.png";
                       }}/>
