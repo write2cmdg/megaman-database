@@ -33,7 +33,6 @@ export const useLogin = () => {
             
             setIsLoading(false);
             
-            console.log("Navigating to /allBosses");
             
         } catch (error) {
             setIsLoading(false);

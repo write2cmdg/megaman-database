@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react'
 //rrd Imports
 import { Link } from 'react-router-dom'
 import Separator from '../components/Separator'
+import MechFlySprite from '../components/MechFlySprite'
 
 
 const BossesPage = () => {
@@ -14,7 +15,7 @@ const BossesPage = () => {
   axios.get('http://localhost:4000/allBosses')
   .then(res => setData(res.data))
   .catch(err => console.log(err));
-  }, [])
+}, [])
 
   
   
@@ -74,6 +75,7 @@ const BossesPage = () => {
       </div>
 
       <Separator />
+
 
     </div>
   )

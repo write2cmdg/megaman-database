@@ -21,7 +21,8 @@ function GameUpdatePage() {
   
     function handleSubmit(e) {
       e.preventDefault()
-      const bossesArray = values.bosses.split(',').map(boss => boss.trim()) // convert comma-separated string to array
+      const bossesArray = (values.bosses ?? '').split(',').map(boss => boss.trim())
+
       const updatedValues = {...values, bosses: bossesArray} // update values object with new array
       axios.put(`http://localhost:4000/updateGame/${id}`, updatedValues)
       .then(res => navigate(`/oneGame/${id}`))

@@ -12,7 +12,7 @@ const GameByName = () => {
        
   const [ data, setData] = useState({})
   const { id } = useParams();
-  const navigate = useNavigate('/allBosses/')
+  const navigate = useNavigate()
 
   useEffect(() => {
     const fetchData = async () => {
@@ -27,12 +27,11 @@ const GameByName = () => {
     fetchData();
   }, []);
 
-console.log(data)
 
 const handleDelete = (id) => {
     
-    const confirm = window.confirm(`Delete Game: ${data.title} Permanently?`);
-    if(confirm) {
+    const confirmDelete = window.confirm(`Delete Game: ${data.title} Permanently?`);
+    if(confirmDelete) {
         axios.delete('http://localhost:4000/deleteBoss/'+ id)
         .then(response => navigate(`/allBosses/`))
         .catch(err => console.log(err));
@@ -81,7 +80,7 @@ const handleDelete = (id) => {
                   {
                     data.bosses && data.bosses.map((boss, ind) => (
                 
-                    <div className='w-3/4 flex flex-row justify-evenly items-center'>
+                    <div key={ind} className='w-3/4 flex flex-row justify-evenly items-center'>
 
                       <Link to={`/oneBossByName/${boss}`}  className="mx-auto basis-1/2 sm:text-3xl text-lg capitalize hover:text-blue-200/50" ><strong>{boss}</strong></Link>
                     

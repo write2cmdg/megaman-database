@@ -39,10 +39,7 @@ const handleDelete = (id) => {
 
 const imgName = data.name
   
-console.log(data.name)
-{data && data.name && (
-    console.log(`img name: ${imgName.replace(' M', 'm')}.jpg`)
-    )}
+
 
 return (
     
