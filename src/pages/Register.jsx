@@ -50,7 +50,7 @@ const Register = () => {
 
             </Form>
 
-              <p>Already Have an Account? <Link to={'/login'} className='text-blue-600 hover:text-yellow-200'> Login Here</Link></p> 
+              <p className="ml-4">Already Have an Account? <Link to={'/login'} className='text-blue-600 hover:text-yellow-200'> Login Here</Link></p> 
           </div>
 
           <Separator />

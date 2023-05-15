@@ -27,8 +27,7 @@ import Main from "./layouts/Main";
 import ProtectedRoutes from "./routes/ProtectedRoutes";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import NoBoss from "./pages/NoBoss";
-import NoGame from "./pages/NoGame";
+
 
 
 
@@ -43,20 +42,6 @@ const router = createBrowserRouter([
         element: 
         <ProtectedRoutes>
         <GamesPage />
-        </ProtectedRoutes>
-      },
-      {
-        path: "/noBoss",
-        element: 
-        <ProtectedRoutes>
-        <NoBoss />
-        </ProtectedRoutes>
-      },
-      {
-        path: "/noGame",
-        element: 
-        <ProtectedRoutes>
-        <NoGame />
         </ProtectedRoutes>
       },
       {
