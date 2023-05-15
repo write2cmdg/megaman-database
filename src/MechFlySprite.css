@@ -6,12 +6,25 @@
     /* border: 6px solid white; */
     
 }
+#sprite_container_charge {
+  width: 175px;
+  height: 250px;
+  overflow: hidden;
+  /* border: 6px solid white; */
+}
 
 #mech-fly {
     animation: sprite-animation .25s steps(3) infinite;
     /* background-color: bisque; */
     width:600px;
-}
+  }
+  
+  #charge {
+    animation: sprite-animation .75s steps(12) infinite;
+    /* background-color: bisque; */
+    width: 2000px;
+    height: 250px;
+  }
   
   @keyframes sprite-animation {
     0% {

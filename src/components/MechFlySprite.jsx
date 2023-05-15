@@ -11,7 +11,6 @@ const MechFlySprite = () => {
         className="absolute top-0 left-0 w-full h-full bg-no-repeat bg-cover"
         style={{
           backgroundImage: `url(${spriteSheet})`,
-          // animation: 'sprite-animation 0.25s steps(3) infinite',
           
         }}
       />
