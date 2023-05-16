@@ -1,5 +1,6 @@
-# Mega Man Database App![Screenshot_20230516_183323_Chrome](https://github.com/write2cmdg/megaman-database/assets/116200147/195add7b-4226-4c54-adf8-5e88662fef3f)
+# Mega Man Database App
 
+(Scroll down for screenshots)
 
 This is a readme file for the Mega Man Database App, which is a web application built using the MERN (MongoDB, Express.js, React.js, Node.js) stack. The app serves as a comprehensive database for Mega Man games and their bosses, providing information about each game and its associated bosses. To access the features of the app, users are required to create an account and log in.
 
@@ -70,3 +71,17 @@ If you have any questions or need further assistance, please feel free to reach 
 - Email: write2cmdg@gmail.com
 
 Thank you for using the Mega Man Database App!
+
+## Screenshots
+![Screenshot_20230516_183323_Chrome](https://github.com/write2cmdg/megaman-database/assets/116200147/12679e00-60a4-4a82-885b-71c6d998a77e)
+
+![Screenshot_20230516_183645_Chrome](https://github.com/write2cmdg/megaman-database/assets/116200147/dbe7d7c2-3726-44e6-9441-a2361ba42a81)
+
+![Screenshot_20230516_184350_Chrome](https://github.com/write2cmdg/megaman-database/assets/116200147/55aa3949-1bc2-4100-9116-cadfa11bfa1e)
+
+![Screenshot_20230516_184411_Chrome](https://github.com/write2cmdg/megaman-database/assets/116200147/98ffa338-a58f-45da-895d-c3098635578e)
+
+![Screenshot_20230516_183838_Chrome](https://github.com/write2cmdg/megaman-database/assets/116200147/1e765e2e-f561-4188-b2cb-36ef1d22ab88)
+
+![Screenshot_20230516_183910_Chrome](https://github.com/write2cmdg/megaman-database/assets/116200147/b3783717-3fcc-477f-a760-1e85604a2256)
+
