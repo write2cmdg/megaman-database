@@ -24,7 +24,7 @@ const Login = () => {
           <div className="bg-slate-800/90 flex flex-col justify-evenly">
             <h2 className='
             p-4 justify-center mx-auto
-            text-blue-200 text-xl w-screen md:text-3xl text-center font-press-start uppercase
+            text-blue-200 text-xl w-full md:text-3xl text-center font-press-start uppercase
             '>Login</h2>
           </div>
 
