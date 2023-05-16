@@ -55,6 +55,7 @@ return (
           <h2 className="py-10 flex flex-row justify-center sm:text-xl text-lg uppercase font-bold text-blue-400" >Robot Master Not found.</h2>
           <Link to={`/createBoss`}  className="mx-auto py-2 min-w-fit px-4 md:mb-2 text-center w-fit text-blue-200 border-2 border-blue-200 rounded-2xl hover:text-yellow-300" > Create It?</Link>
           <ChargeSprite />
+          <Back />
         </div>
       )}
 
