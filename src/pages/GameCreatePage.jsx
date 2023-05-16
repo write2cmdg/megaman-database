@@ -22,7 +22,7 @@ const GameCreatePage = () => {
     e.preventDefault()
     const bossesArray = values.bosses.split(',').map(boss => boss.trim())
     const newValues = { ...values, bosses: bossesArray }
-    axios.post('http://localhost:4000/createGame', newValues)
+    axios.post('https://megaman-api-server.onrender.com/createGame', newValues)
       .then(res => navigate('/allGames'))
       .catch(err => console.log(err))
     toast.success(`You've Created a New Game!`)

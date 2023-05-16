@@ -12,7 +12,7 @@ const BossesPage = () => {
   const [ data, setData] = useState([])
   
   useEffect(() => {
-  axios.get('http://localhost:4000/allBosses')
+  axios.get('https://megaman-api-server.onrender.com/allBosses')
   .then(res => setData(res.data))
   .catch(err => console.log(err));
 }, [])

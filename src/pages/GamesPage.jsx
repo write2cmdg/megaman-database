@@ -11,7 +11,7 @@ const GamesPage = () => {
   const [ data, setData] = useState([])
 
   useEffect(() => {
-  axios.get('http://localhost:4000/allGames')
+  axios.get('https://megaman-api-server.onrender.com/allGames')
   .then(res => setData(res.data))
   .catch(err => console.log(err));
   }, [])

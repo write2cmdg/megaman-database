@@ -19,7 +19,7 @@ const BossPage = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-  axios.get('http://localhost:4000/oneBoss/'+ id)
+  axios.get('https://megaman-api-server.onrender.com/oneBoss/'+ id)
   .then(res => setData(res.data))
   .catch(err => console.log(err));
   }, [])
@@ -30,7 +30,7 @@ const BossPage = () => {
     
     const confirm = window.confirm(`Delete Robot Master: ${data.name} Permanently?`);
     if(confirm) {
-      axios.delete('http://localhost:4000/deleteBoss/'+ id)
+      axios.delete('https://megaman-api-server.onrender.com/deleteBoss/'+ id)
       .then(res => navigate(`/allBosses/`))
       .catch(err => console.log(err));
       toast.success(`You've Permanently Deleted ${data.name}!`)

@@ -15,14 +15,14 @@ function BossUpdatePage() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    axios.get(`http://localhost:4000/oneBoss/${id}`)
+    axios.get(`https://megaman-api-server.onrender.com/oneBoss/${id}`)
     .then(res => setData(res.data))
     .catch(err => console.log(err));
     }, [])
   
     function handleSubmit(e) {
       e.preventDefault()
-      axios.put(`http://localhost:4000/updateBoss/${id}`, values)
+      axios.put(`https://megaman-api-server.onrender.com/updateBoss/${id}`, values)
       .then(res => navigate(`/oneBoss/${id}`))
       .catch(err => console.log(err));
       toast.success(`You've Updated ${data.name}!`)

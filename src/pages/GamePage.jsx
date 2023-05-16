@@ -15,7 +15,7 @@ const GamePage = () => {
   const navigate = useNavigate('/allGames/')
 
   useEffect(() => {
-  axios.get('http://localhost:4000/oneGame/'+ id)
+  axios.get('https://megaman-api-server.onrender.com/oneGame/'+ id)
   .then(res => setData(res.data))
   .catch(err => console.log(err));
 }, [])
@@ -26,7 +26,7 @@ const GamePage = () => {
     
     const confirm = window.confirm(`Delete Game: ${data.title} Permanently?`);
     if(confirm) {
-      axios.delete('http://localhost:4000/deleteGame/'+ id)
+      axios.delete('https://megaman-api-server.onrender.com/deleteGame/'+ id)
       .then(res => navigate(`/allGames/`))
       .catch(err => console.log(err));
       toast.success(`You've Permanently Deleted ${data.title}!`)
