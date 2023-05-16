@@ -8,6 +8,7 @@ import Separator from '../components/Separator'
 
 //library imports
 import { toast } from 'react-toastify'
+import Back from '../components/Back'
 
 const BossCreatePage = () => {
   
@@ -83,6 +84,9 @@ const BossCreatePage = () => {
 
         </Form>
 
+          <div className="ml-4 pb-2">
+            <Back />
+          </div>
       </div>
 
       <Separator />

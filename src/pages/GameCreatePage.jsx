@@ -4,6 +4,7 @@ import { Link, Form } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom/dist'
 import Separator from '../components/Separator'
 import { toast } from 'react-toastify'
+import Back from '../components/Back'
 
 const GameCreatePage = () => {
   
@@ -69,6 +70,10 @@ const GameCreatePage = () => {
           <button className="uppercase mt-8 font-press-start text-lg hover:text-yellow-200 hover:bg-red-800 hover:border-red-900 text-blue-200 capitalize bg-blue-900 my-2 border-blue-900 border-4 p-1 rounded-lg">Submit</button>
 
         </Form>
+
+        <div className="ml-4 pb-2">
+            <Back />
+          </div>
 
       </div>
 

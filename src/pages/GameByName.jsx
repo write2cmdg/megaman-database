@@ -1,10 +1,11 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { Link, Navigate, useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom/dist'
 import Separator from '../components/Separator'
 import { toast } from 'react-toastify'
 import MechFlySprite from '../components/MechFlySprite'
+import Back from '../components/Back'
 
 
 
@@ -40,7 +41,6 @@ const handleDelete = (id) => {
     
     }
 }
-
 
 
   return (
@@ -110,15 +110,17 @@ const handleDelete = (id) => {
               </div>)
         }
 
-        {data.title &&(
-        
-            <div className="bg-slate-800/90 flex flex-row p-2 md:justify-evenly justify-between uppercase font-press-start text-xs md:text-xl text-center">
 
-                <Link className='text-blue-200 underline hover:text-yellow-300' to={`/updateBoss/${data._id} `}>update</Link>
-                <button onClick={e => handleDelete(data._id)} className='font-extrabold text-lg text-red-800 underline hover:text-yellow-300 uppercase'>delete</button>
+{data && data.title && (
+      
+      <div className="bg-slate-800/90 flex flex-row p-2 md:justify-evenly justify-between uppercase font-press-start text-xs md:text-xl text-center">
 
-            </div>)
-        }
+          <Link className=' text-lg text-blue-200 underline hover:text-yellow-300' to={`/updateGame/${data._id} `}>update</Link>
+          <Back />
+          <button onClick={e => handleDelete(data._id)} className='font-extrabold text-lg text-red-800 underline hover:text-yellow-300 uppercase'>delete</button>
+
+      </div>
+      )}
         
 
       <Separator />

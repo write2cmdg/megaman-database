@@ -4,6 +4,7 @@ import { Link, Navigate, useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom/dist'
 import Separator from '../components/Separator'
 import { toast } from 'react-toastify'
+import Back from '../components/Back'
 
 
 
@@ -19,9 +20,7 @@ const GamePage = () => {
   .catch(err => console.log(err));
 }, [])
 
-if (!data.title) {
-  <Navigate to="/noGame" />;
-}
+
   
   const handleDelete = (id) => {
     
@@ -36,7 +35,6 @@ if (!data.title) {
   }
 
 
-  const { title, year, story, bosses } = data
 
   return (
 
@@ -59,13 +57,13 @@ if (!data.title) {
 
         <div className='h-full text-blue-200 p-4 text-sm lg:text-xl flex flex-col ml-8 justify-evenly'>
 
-          <div>
-            <h2 className='capitalize'><strong className='uppercase font-press-start text-md align-middle'>Title:</strong> {title}</h2>
-            <h2 className='capitalize'><strong className='uppercase font-press-start text-md align-middle'>Year:</strong> {year}</h2>
-            <h2 className='capitalize'><strong className='uppercase font-press-start text-md align-middle'>Story:</strong> {story}</h2>
-            <h2 className='capitalize'><strong className='uppercase font-press-start text-md align-middle'>Robot Masters:(<span className='text-yellow-200'>Scroll Down</span>) </strong></h2>
-          
-          </div>
+        <div>
+          <h2 className='capitalize'><strong className='uppercase font-press-start text-md align-middle'>Title:</strong> {data.title}</h2>
+          <h2 className='capitalize'><strong className='uppercase font-press-start text-md align-middle'>Year:</strong> {data.year}</h2>
+          <h2 className='capitalize'><strong className='uppercase font-press-start text-md align-middle'>Story:</strong> {data.story}</h2>
+          <h2 className='capitalize'><strong className='uppercase font-press-start text-md align-middle'>Robot Masters:(<span className='text-yellow-200'>Scroll Down</span>) </strong></h2>
+        
+        </div> 
 
         </div>
         <div className='text-blue-200 flex flex-col justify-around items-center'>
@@ -91,12 +89,16 @@ if (!data.title) {
 
       </div>
       
+      {data && data.title && (
+      
       <div className="bg-slate-800/90 flex flex-row p-2 md:justify-evenly justify-between uppercase font-press-start text-xs md:text-xl text-center">
 
-        <Link className='text-blue-200 underline hover:text-yellow-300' to={`/updateGame/${id} `}>update</Link>
-        <button onClick={e => handleDelete(data._id)} className='font-extrabold text-lg text-red-800 underline hover:text-yellow-300 uppercase'>delete</button>
+          <Link className=' text-lg text-blue-200 underline hover:text-yellow-300' to={`/updateGame/${data._id} `}>update</Link>
+          <Back />
+          <button onClick={e => handleDelete(data._id)} className='font-extrabold text-lg text-red-800 underline hover:text-yellow-300 uppercase'>delete</button>
 
       </div>
+      )}
 
       <Separator />
 

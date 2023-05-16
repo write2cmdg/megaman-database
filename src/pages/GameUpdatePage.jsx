@@ -5,6 +5,7 @@ import { Form, useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom/dist';
 import Separator from '../components/Separator'
 import { toast } from 'react-toastify';
+import Back from '../components/Back';
 
 function GameUpdatePage() {
 
@@ -73,6 +74,10 @@ function GameUpdatePage() {
           <button className="mt-8 font-press-start text-lg hover:text-yellow-200 hover:bg-red-800 hover:border-red-900 text-blue-200 bg-blue-900 my-2 border-blue-900 border-4 p-1 rounded-lg uppercase">update</button>
 
         </Form>
+
+        <div className="ml-4 pb-2">
+            <Back />
+          </div>
 
       </div>
 
