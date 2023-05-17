@@ -1,6 +1,6 @@
 import {
   createBrowserRouter,
-  RouterProvider,
+  RouterProvider, Navigate
 } from "react-router-dom";
 
 //Component imports
@@ -124,6 +124,11 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register />
+      },
+      {
+
+        path: "*",
+        element={<Navigate to="/" />} />
       }
     ]
   },
