@@ -15,14 +15,14 @@ function BossUpdatePage() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    axios.get(`http://localhost:4000/oneBoss/${id}`)
+    axios.get(`https://megaman-api-server.onrender.com/oneBoss/${id}`)
     .then(res => setData(res.data))
     .catch(err => console.log(err));
     }, [])
   
     function handleSubmit(e) {
       e.preventDefault()
-      axios.put(`http://localhost:4000/updateBoss/${id}`, values)
+      axios.put(`https://megaman-api-server.onrender.com/updateBoss/${id}`, values)
       .then(res => navigate(`/oneBoss/${id}`))
       .catch(err => console.log(err));
       toast.success(`You've Updated ${data.name}!`)
@@ -48,7 +48,7 @@ function BossUpdatePage() {
 
       <div className='text-blue-200 font-bold bg-slate-800/90'>
 
-        <Form onSubmit={handleSubmit} className="px-8 sm:w-3/4 xl:w-1/2 w-screen p-2 flex flex-col text-left mx-auto uppercase">
+        <Form onSubmit={handleSubmit} className="px-8 sm:w-3/4 xl:w-1/2 w-full p-2 flex flex-col text-left mx-auto uppercase">
 
           <div className="mb-2 flex flex-row justify-between">
             <label className='w-1/3 font-press-start' htmlFor="name">Name: </label>

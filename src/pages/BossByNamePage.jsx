@@ -18,7 +18,7 @@ const BossByNamePage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/oneBossByName/' + id);
+        const response = await axios.get('https://megaman-api-server.onrender.com/oneBossByName/' + id);
         setData(response.data);
     } catch (err) {
         console.log(err);
@@ -32,7 +32,7 @@ const handleDelete = (id) => {
   
   const confirm = window.confirm(`Delete Robot Master: ${data.name} Permanently?`);
   if(confirm) {
-    axios.delete('http://localhost:4000/deleteBoss/'+ id)
+    axios.delete('https://megaman-api-server.onrender.com/deleteBoss/'+ id)
     .then(response => navigate(`/allBosses/`))
     .catch(err => console.log(err));
     toast.success(`You've Permanently Deleted ${data.name}!`)
@@ -55,6 +55,7 @@ return (
           <h2 className="py-10 flex flex-row justify-center sm:text-xl text-lg uppercase font-bold text-blue-400" >Robot Master Not found.</h2>
           <Link to={`/createBoss`}  className="mx-auto py-2 min-w-fit px-4 md:mb-2 text-center w-fit text-blue-200 border-2 border-blue-200 rounded-2xl hover:text-yellow-300" > Create It?</Link>
           <ChargeSprite />
+          <Back />
         </div>
       )}
 

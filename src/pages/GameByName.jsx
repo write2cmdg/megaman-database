@@ -19,7 +19,7 @@ const GameByName = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/oneGameByName/' + id);
+        const response = await axios.get('https://megaman-api-server.onrender.com/oneGameByName/' + id);
         setData(response.data);
       } catch (err) {
         console.log(err);
@@ -34,7 +34,7 @@ const handleDelete = (id) => {
     
     const confirmDelete = window.confirm(`Delete Game: ${data.title} Permanently?`);
     if(confirmDelete) {
-        axios.delete('http://localhost:4000/deleteBoss/'+ id)
+        axios.delete('https://megaman-api-server.onrender.com/deleteBoss/'+ id)
         .then(response => navigate(`/allBosses/`))
         .catch(err => console.log(err));
         toast.success(`You've Permanently Deleted ${data.title}!`)
@@ -53,6 +53,7 @@ const handleDelete = (id) => {
           <h2 className="py-10 flex flex-row justify-center sm:text-xl text-lg uppercase font-bold text-blue-400" >Game Not found.</h2>
           <Link to={`/createGame`}  className="mx-auto py-2 min-w-fit px-4 md:mb-2 text-center w-fit text-blue-200 border-2 border-blue-200 rounded-2xl hover:text-yellow-300" > Create It?</Link>
           <MechFlySprite />
+          <Back />
         </div>
       )}
    

@@ -22,7 +22,7 @@ const GameCreatePage = () => {
     e.preventDefault()
     const bossesArray = values.bosses.split(',').map(boss => boss.trim())
     const newValues = { ...values, bosses: bossesArray }
-    axios.post('http://localhost:4000/createGame', newValues)
+    axios.post('https://megaman-api-server.onrender.com/createGame', newValues)
       .then(res => navigate('/allGames'))
       .catch(err => console.log(err))
     toast.success(`You've Created a New Game!`)
@@ -45,7 +45,7 @@ const GameCreatePage = () => {
 
       <div className='text-blue-200 font-bold bg-slate-800/90'>
 
-        <Form onSubmit={handleSubmit} className="px-8 sm:w-3/4 xl:w-1/2 w-screen p-2 flex flex-col text-left mx-auto uppercase">
+        <Form onSubmit={handleSubmit} className="px-8 sm:w-3/4 xl:w-1/2 w-full p-2 flex flex-col text-left mx-auto uppercase">
 
           <div className="mb-2 flex flex-row justify-between">
             <label className='w-1/3 font-press-start' htmlFor="title">Title: </label>
