@@ -1,8 +1,15 @@
-# Mega Man Database App
+# Mega Man Database App https://megamandb-api.onrender.com
+
+
 
 (Scroll down for screenshots)
 
 This is a readme file for the Mega Man Database App, which is a web application built using the MERN (MongoDB, Express.js, React.js, Node.js) stack. The app serves as a comprehensive database for Mega Man games and their bosses, providing information about each game and its associated bosses. To access the features of the app, users are required to create an account and log in.
+
+
+
+Branch deployed: production
+
 
 ## Features
 
