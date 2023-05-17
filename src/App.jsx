@@ -127,10 +127,6 @@ const router = createBrowserRouter([
       }     
     ]
   },
-  {
-    path: "*",
-    element={<Navigate to="/" />}
-   }
 ])
 
 function App() {
