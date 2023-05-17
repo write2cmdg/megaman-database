@@ -127,7 +127,7 @@ const router = createBrowserRouter([
       },
       {
         path: "*",
-        element: <Main />
+        element={<Navigate to="/" />}
       }
     ]
   }
