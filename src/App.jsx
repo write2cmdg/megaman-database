@@ -128,8 +128,8 @@ const router = createBrowserRouter([
     ]
   },
   {
-     path: "/*",
-     element= <Main />
+     path: "*",
+     element= <BossesPage />
    }
 ])
 
