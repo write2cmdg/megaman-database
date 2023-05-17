@@ -126,11 +126,7 @@ const router = createBrowserRouter([
         element: <Register />
       }
     ]
-  },
-  {
-     path: "*",
-     element= <BossesPage />
-   }
+  }
 ])
 
 function App() {
