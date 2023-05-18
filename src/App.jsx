@@ -131,11 +131,6 @@ const router = createBrowserRouter([
     ]
   },
   {
-    path: "/notfound",
-    // element: <Navigate to='https://megamandb-api.onrender.com/' replace />
-    element: <NotFound />
-  },
-  {
     path: "/*",
     // element: <Navigate to='https://megamandb-api.onrender.com/' replace />
     element: navigate("/")
