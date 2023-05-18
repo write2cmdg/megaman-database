@@ -1,6 +1,6 @@
 import {
   createBrowserRouter,
-  RouterProvider, Navigate
+  RouterProvider
 } from "react-router-dom";
 
 //Component imports
@@ -27,6 +27,7 @@ import Main from "./layouts/Main";
 import ProtectedRoutes from "./routes/ProtectedRoutes";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import NotFound from "./pages/NotFound";
 
 
 
@@ -130,7 +131,7 @@ const router = createBrowserRouter([
   {
     path: "*",
     // element: <Navigate to='https://megamandb-api.onrender.com/' replace />
-    element: <Main />
+    element: <NotFound />
   }
 ])
 
