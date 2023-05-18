@@ -1,6 +1,6 @@
 import {
   createBrowserRouter,
-  RouterProvider,
+  RouterProvider, Navigate
 } from "react-router-dom";
 
 //Component imports
@@ -130,7 +130,7 @@ const router = createBrowserRouter([
         element: <Navigate to='/' replace />
       }
     ]
-  },
+  }
 ])
 
 function App() {
