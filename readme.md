@@ -47,8 +47,6 @@ The Mega Man Database App utilizes the following dependencies:
 ### Client-Side Dependencies
 
 - axios: ^1.3.4
-- classnames: ^2.3.2
-- react: ^18.2.0
 - react-dom: ^18.2.0
 - react-router-dom: ^6.10.0
 - react-toastify: ^9.1.2
