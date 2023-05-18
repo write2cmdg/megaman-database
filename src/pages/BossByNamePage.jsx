@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { Link, Navigate, useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom/dist'
 import Separator from '../components/Separator'
 import { toast } from 'react-toastify'
@@ -22,7 +22,6 @@ const BossByNamePage = () => {
         setData(response.data);
     } catch (err) {
         console.log(err);
-        // display error message to user
     }
 };
 fetchData();

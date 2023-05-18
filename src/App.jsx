@@ -1,6 +1,7 @@
 import {
   createBrowserRouter,
-  RouterProvider
+  RouterProvider,
+  useNavigate
 } from "react-router-dom";
 
 //Component imports
@@ -30,6 +31,7 @@ import Register from "./pages/Register";
 import NotFound from "./pages/NotFound";
 
 
+const navigate = useNavigate();
 
 
 
@@ -126,11 +128,6 @@ const router = createBrowserRouter([
         path: "/register",
         element: <Register />
       },
-      {
-        path: "/*",
-        // element: <Navigate to='https://megamandb-api.onrender.com/' replace />
-        element: <NotFound />
-      }
     ]
   },
   {
@@ -141,7 +138,7 @@ const router = createBrowserRouter([
   {
     path: "/*",
     // element: <Navigate to='https://megamandb-api.onrender.com/' replace />
-    element: <NotFound />
+    element: navigate("/")
   }
 ])
 

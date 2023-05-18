@@ -18,7 +18,7 @@ const NotFound = () => {
         text-blue-200 text-xl w-screen md:text-3xl text-center font-press-start uppercase
         '>Page not found</h2>
        
-          <Link to={`/`}  className="mx-auto py-2 min-w-fit px-4 md:mb-2 text-center w-fit text-blue-200 border-2 border-blue-200 rounded-2xl hover:text-yellow-300" > Go Bach Home</Link>
+          <Link to={`/`}  className="mx-auto py-2 min-w-fit px-4 md:mb-2 text-center w-fit text-blue-200 border-2 border-blue-200 rounded-2xl hover:text-yellow-300" > Go Back Home</Link>
 
 
           </div>
