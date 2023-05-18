@@ -1,14 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Separator from '../components/Separator'
+import NavBar from '../components/NavBar'
+import Footer from '../components/Footer'
+import StarsBg from '../components/StarsBg'
 
 const NotFound = () => {
   return (
-    <div className='bg-blue-900'>
-
-      <div className="flex flex-col justify-center">
-          <Separator />
-
+    <div className="p-2 sm:p-4 md:p-8 mx-auto flex flex-col justify-between w-screen h-full overflow-hidden lg:w-3/4 xl:w-2/3 2xl:w-1/2 ">
+    <NavBar />
+    <main className="border-x-8 border-blue-200/30 rounded-lg">
+      
           <div className="bg-slate-800/90 flex flex-col justify-evenly">
 
           <h2 className='
@@ -20,15 +22,10 @@ const NotFound = () => {
 
 
           </div>
-
-
-
-
-          <Separator />
-
-      </div>
-
-    </div>
+    </main>
+    <Footer />
+    <StarsBg /> 
+  </div>
   )
 }
 
