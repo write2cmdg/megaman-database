@@ -124,12 +124,12 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register />
-      },
-      {
-        path: "/*",
-        element: <Navigate to='/' replace />
       }
     ]
+  },
+  {
+    path: "/*",
+    element: <Navigate to='/' replace />
   }
 ])
 
