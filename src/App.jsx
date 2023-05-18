@@ -4,8 +4,6 @@ import {
   useNavigate
 } from "react-router-dom";
 
-//Component imports
-import NavBar from "./components/NavBar";
 
 //Pages imports
 import BossesPage from "./pages/BossesPage";
@@ -18,6 +16,8 @@ import GamePage from "./pages/GamePage";
 import GameCreatePage from "./pages/GameCreatePage";
 import GameUpdatePage from "./pages/GameUpdatePage";
 import GameByName from "./pages/GameByName";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 //Library imports
 import { ToastContainer } from 'react-toastify';
@@ -25,13 +25,9 @@ import 'react-toastify/dist/ReactToastify.css';
 
 //layouts imports
 import Main from "./layouts/Main";
+
 import ProtectedRoutes from "./routes/ProtectedRoutes";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
-import NotFound from "./pages/NotFound";
 
-
-const navigate = useNavigate();
 
 
 
@@ -129,11 +125,6 @@ const router = createBrowserRouter([
         element: <Register />
       },
     ]
-  },
-  {
-    path: "/*",
-    // element: <Navigate to='https://megamandb-api.onrender.com/' replace />
-    element: navigate("/")
   }
 ])
 
