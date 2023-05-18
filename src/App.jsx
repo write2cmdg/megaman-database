@@ -128,8 +128,8 @@ const router = createBrowserRouter([
     ]
   },
   {
-    path: "*",
-    element: <Navigate to='/allBosses' replace />
+    path: "/*",
+    element: <Navigate to='https://megamandb-api.onrender.com/' replace />
   }
 ])
 
