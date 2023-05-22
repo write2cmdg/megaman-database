@@ -1,80 +1,87 @@
 // rrd imports
-import { NavLink, Navigate, useNavigate } from "react-router-dom"
-import useLogout from "../hooks/useLogout"
-import { useAuthContext } from "../hooks/useAuthContext"
-import { useEffect } from "react";
-
+import { NavLink, Navigate, redirect, useNavigate } from "react-router-dom";
+import useLogout from "../hooks/useLogout";
+import { useAuthContext } from "../hooks/useAuthContext";
 
 const NavBar = () => {
-  const navigate = useNavigate();
+  const { logout } = useLogout();
 
+  const { user } = useAuthContext();
 
-  const {logout} = useLogout()
-
-  const { user } = useAuthContext()
-  
   const handleClick = () => {
-    logout()
-  }
-
-  useEffect(() => {
-   
-    if(!user) {
-     navigate("/Login")
-     }
-  }, []);  
-
+    logout();
+  };
 
   return (
-
-    
-
-    <div className="
+    <div
+      className="
     w-full flex flex-col items-center justify-evenly
     font-press-start uppercase
     text-blue-100 pb-8
-    ">
-
-      <div className="
+    "
+    >
+      <div
+        className="
       flex flex-row justify-center items-center
-      ">
+      "
+      >
         <img className="m-8 mx-auto" src="../images/megamanTitle.png" />
       </div>
 
-      <div className="
+      <div
+        className="
       w-full
       md:text-xl text-md
       flex flex-col md:flex-row md:gap-2 justify-evenly mb-6 md:mx-0 mx-8 content-around
-      ">
-
-
-        { user && (
-        <NavLink className="mx-auto py-2 min-w-fit px-4 md:mb-2 text-center w-full text-blue-200 border-2 border-blue-200 rounded-2xl hover:text-yellow-300" 
-        to="/allGames">ALL GAMES</NavLink>
+      "
+      >
+        {!user && (
+          <div className="p-2 flex flex-col items-center">
+            <br />
+            <p>Welcome to the Megaman Data Base!!</p>
+            <br />
+            <p>You're not logged in.</p>
+            <br />
+            <NavLink
+              className="mx-auto py-2 min-w-fit px-4 md:mb-2 text-center w-full text-blue-200 border-2 border-blue-200 rounded-2xl hover:text-yellow-300"
+              to="/login"
+            >
+              LOGIN or register
+            </NavLink>
+          </div>
         )}
 
-        { user && (
-        <NavLink className="mx-auto py-2 min-w-fit px-4 md:mb-2 text-center w-full text-blue-200 border-2 border-blue-200 rounded-2xl hover:text-yellow-300" 
-        to="/allBosses">ALL BOSSES</NavLink>
+        {user && (
+          <NavLink
+            className="mx-auto py-2 min-w-fit px-4 md:mb-2 text-center w-full text-blue-200 border-2 border-blue-200 rounded-2xl hover:text-yellow-300"
+            to="/allGames"
+          >
+            ALL GAMES
+          </NavLink>
         )}
 
-        { user && (
-          <NavLink className="mx-auto py-2 min-w-fit px-4 md:mb-2 text-center w-full text-blue-200 border-2 border-blue-200 rounded-2xl hover:text-yellow-300" 
-          to="/login" onClick={handleClick}>logout</NavLink>
-          
-          )}
+        {user && (
+          <NavLink
+            className="mx-auto py-2 min-w-fit px-4 md:mb-2 text-center w-full text-blue-200 border-2 border-blue-200 rounded-2xl hover:text-yellow-300"
+            to="/allBosses"
+          >
+            ALL BOSSES
+          </NavLink>
+        )}
 
+        {user && (
+          <NavLink
+            className="mx-auto py-2 min-w-fit px-4 md:mb-2 text-center w-full text-blue-200 border-2 border-blue-200 rounded-2xl hover:text-yellow-300"
+            to="/login"
+            onClick={handleClick}
+          >
+            logout
+          </NavLink>
+        )}
       </div>
-          { user && (
-                      
-          <h3 className="ml-auto">Welcome, {user.email}</h3>
-
-            )}
-    
+      {user && <h3 className="ml-auto">Welcome, {user.email}</h3>}
     </div>
+  );
+};
 
- 
-  )
-}
-
-export default NavBar
+export default NavBar;

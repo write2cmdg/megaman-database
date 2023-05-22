@@ -5,7 +5,6 @@ import React, { useEffect, useState } from 'react'
 //rrd Imports
 import { Link } from 'react-router-dom'
 import Separator from '../components/Separator'
-import MechFlySprite from '../components/MechFlySprite'
 
 
 const BossesPage = () => {
