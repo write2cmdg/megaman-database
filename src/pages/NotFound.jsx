@@ -19,7 +19,7 @@ const NotFound = () => {
         className="mx-auto py-2 min-w-fit px-4 md:mb-2 text-center text-blue-200 uppercase underline hover:text-yellow-300"
         to="/allBosses"
       >
-      home
+        home
       </Link>
 
       <Back />

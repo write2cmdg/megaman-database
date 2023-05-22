@@ -8,34 +8,33 @@ export const useLogin = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { dispatch } = useAuthContext();
 
-  
   const login = async (email, password) => {
-      setIsLoading(true);
-      setError(null);
-      
-      try {
-          const response = await axios.post(
-              "https://megaman-api-server.onrender.com/login",
+    setIsLoading(true);
+    setError(null);
+
+    try {
+      const response = await axios.post(
+        "https://megaman-api-server.onrender.com/login",
         {
           email,
           password,
         }
-        );
-        
-        const json = response.data;
-        
-        //save user to local storage
-        localStorage.setItem("user", JSON.stringify(json));
-        
-        //update Auth context
-        dispatch({ type: "LOGIN", payload: json });
-        
-        setIsLoading(false);
+      );
+
+      const json = response.data;
+
+      //save user to local storage
+      localStorage.setItem("user", JSON.stringify(json));
+
+      //update Auth context
+      dispatch({ type: "LOGIN", payload: json });
+
+      setIsLoading(false);
     } catch (error) {
-        setIsLoading(false);
-        setError(error.message);
+      setIsLoading(false);
+      setError(error.message);
     }
-};
+  };
 
   return { login, isLoading, error };
 };

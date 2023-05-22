@@ -1,5 +1,5 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Back = () => {
   const navigate = useNavigate();
@@ -9,7 +9,10 @@ const Back = () => {
   };
 
   return (
-    <button className="text-lg text-blue-200 uppercase underline hover:text-yellow-300" onClick={handleGoBack}>
+    <button
+      className="text-lg text-blue-200 uppercase underline hover:text-yellow-300"
+      onClick={handleGoBack}
+    >
       Back
     </button>
   );

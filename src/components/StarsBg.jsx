@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
 function StarsBg() {
   useEffect(() => {
@@ -21,21 +21,21 @@ function StarsBg() {
       this.size = size;
       this.speed = speed;
 
-      this.update = function() {
+      this.update = function () {
         this.x -= this.speed;
         if (this.x < -this.size) {
           this.x = window.innerWidth + this.size;
           this.y = Math.random() * window.innerHeight;
         }
-      }
+      };
 
-      this.draw = function() {
+      this.draw = function () {
         ctx.fillStyle = "#ffffff";
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.closePath();
         ctx.fill();
-      }
+      };
     }
 
     function createStars() {
@@ -65,14 +65,16 @@ function StarsBg() {
 
     return () => {
       window.removeEventListener("resize", resizeCanvas);
-    }
+    };
   }, []);
 
   return (
     <div
       className="absolute inset-0 z-[-20] w-screen h-[200%] "
-      style={{ backgroundImage: 'linear-gradient(180deg, rgba(2,0,36,1) 10%, rgba(0,184,237,1) 100%)' }}
-
+      style={{
+        backgroundImage:
+          "linear-gradient(180deg, rgba(2,0,36,1) 10%, rgba(0,184,237,1) 100%)",
+      }}
     >
       <canvas id="myCanvas"></canvas>
 
@@ -82,9 +84,10 @@ function StarsBg() {
           className="star absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-1 h-1 bg-white"
           style={{
             animation: `scroll ${(Math.random() + 1) * 100}s linear infinite`,
-            animationDelay: `${Math.random() * 10}s`
+            animationDelay: `${Math.random() * 10}s`,
           }}
-        hidden ></div>
+          hidden
+        ></div>
       ))}
     </div>
   );

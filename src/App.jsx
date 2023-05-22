@@ -3,7 +3,6 @@ import {
   createRoutesFromElements,
   Route,
   RouterProvider,
-  useNavigate,
 } from "react-router-dom";
 
 //Pages imports
@@ -32,23 +31,10 @@ import Main from "./layouts/Main";
 import ProtectedRoutes from "./routes/ProtectedRoutes";
 
 const router = createBrowserRouter(
-
   createRoutesFromElements(
-
     <Route path="/" element={<Main />}>
-
-      <Route
-        path="/login"
-        element={
-          <Login />
-        }
-      />
-      <Route
-        path="/register"
-        element={
-          <Register />
-        }
-      />
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
       <Route
         path="/allGames"
         element={
@@ -97,12 +83,7 @@ const router = createBrowserRouter(
           </ProtectedRoutes>
         }
       />
-      <Route
-        path="/deleteBoss/:id"
-        element={
-          <p>Boss Deleted</p>
-        }
-      />
+      <Route path="/deleteBoss/:id" element={<p>Boss Deleted</p>} />
       <Route
         path="/oneGame/:id"
         element={
@@ -135,21 +116,10 @@ const router = createBrowserRouter(
           </ProtectedRoutes>
         }
       />
-      <Route
-        path="/deleteGame/:id"
-        element={
-          <p>Game Deleted</p>
-        }
-      />
-      <Route
-        path="/*"
-        element={
-          <NotFound />  
-        }
-      />
+      <Route path="/deleteGame/:id" element={<p>Game Deleted</p>} />
+      <Route path="/*" element={<NotFound />} />
     </Route>
   )
-
 );
 
 function App() {
