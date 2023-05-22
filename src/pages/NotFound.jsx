@@ -9,14 +9,14 @@ const NotFound = () => {
       <Separator />
       <h2
         className="
-        justify-center
+        p-4 justify-center
         text-blue-200 text-xl w-full md:text-3xl text-center font-press-start uppercase
         "
       >
         Page not found
       </h2>
       <Link
-        className="mx-auto py-2 min-w-fit px-4 md:mb-2 text-center text-blue-200 uppercase underline hover:text-yellow-300"
+        className="mx-auto py-2 min-w-fit px-4 md:mb-2 text-center text-xl text-blue-200 uppercase underline hover:text-yellow-300"
         to="/allBosses"
       >
         home
