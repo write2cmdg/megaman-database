@@ -142,13 +142,7 @@ const router = createBrowserRouter(
         }
       />
       <Route
-        path="notfound/404"
-        element={
-          <NotFound />
-        }
-      />
-      <Route
-        path="*"
+        path="/*"
         element={
           <NotFound />  
         }
