@@ -9,8 +9,8 @@ const NotFound = () => {
       <Separator />
       <h2
         className="
-        p-4 justify-center mx-auto
-        text-blue-200 text-xl w-screen md:text-3xl text-center font-press-start uppercase
+        justify-center
+        text-blue-200 text-xl w-full md:text-3xl text-center font-press-start uppercase
         "
       >
         Page not found
