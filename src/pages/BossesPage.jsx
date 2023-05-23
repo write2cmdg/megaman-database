@@ -40,7 +40,7 @@ const BossesPage = () => {
               <div className="w-3/4 flex flex-row justify-around items-center">
                 <Link
                   className="mx-auto basis-1/2 sm:text-3xl text-lg capitalize hover:text-blue-200/50"
-                  to={`/#oneBoss/${d._id}`}
+                  to={`/oneBoss/${d._id}`}
                 >
                   <strong>{d.name}</strong>
                 </Link>
