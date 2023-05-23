@@ -14,7 +14,7 @@ export const useLogin = () => {
 
     try {
       const response = await axios.post(
-        "https://megaman-api-server.onrender.com/#/login",
+        "https://megaman-api-server.onrender.com/login",
         {
           email,
           password,

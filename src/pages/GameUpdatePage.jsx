@@ -14,7 +14,7 @@ function GameUpdatePage() {
 
   useEffect(() => {
     axios
-      .get(`https://megaman-api-server.onrender.com/#/oneGame/${id}`)
+      .get(`https://megaman-api-server.onrender.com/oneGame/${id}`)
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
   }, []);
@@ -28,10 +28,10 @@ function GameUpdatePage() {
     const updatedValues = { ...values, bosses: bossesArray }; // update values object with new array
     axios
       .put(
-        `https://megaman-api-server.onrender.com/#/updateGame/${id}`,
+        `https://megaman-api-server.onrender.com/updateGame/${id}`,
         updatedValues
       )
-      .then((res) => navigate(`/#/oneGame/${id}`))
+      .then((res) => navigate(`/oneGame/${id}`))
       .catch((err) => console.log(err));
     toast.success(`You've Successfully Updated ${data.title}!`);
   }

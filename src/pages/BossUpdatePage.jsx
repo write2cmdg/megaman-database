@@ -14,7 +14,7 @@ function BossUpdatePage() {
 
   useEffect(() => {
     axios
-      .get(`https://megaman-api-server.onrender.com/#/oneBoss/${id}`)
+      .get(`https://megaman-api-server.onrender.com/oneBoss/${id}`)
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
   }, []);
@@ -22,7 +22,7 @@ function BossUpdatePage() {
   function handleSubmit(e) {
     e.preventDefault();
     axios
-      .put(`https://megaman-api-server.onrender.com/#/updateBoss/${id}`, values)
+      .put(`https://megaman-api-server.onrender.com/updateBoss/${id}`, values)
       .then((res) => navigate(`/oneBoss/${id}`))
       .catch((err) => console.log(err));
     toast.success(`You've Updated ${data.name}!`);

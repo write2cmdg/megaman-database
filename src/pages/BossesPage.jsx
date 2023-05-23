@@ -10,7 +10,7 @@ const BossesPage = () => {
 
   useEffect(() => {
     axios
-      .get("https://megaman-api-server.onrender.com/#/allBosses")
+      .get("https://megaman-api-server.onrender.com/allBosses")
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
   }, []);

@@ -10,7 +10,7 @@ const GamesPage = () => {
 
   useEffect(() => {
     axios
-      .get("https://megaman-api-server.onrender.com/#/allGames")
+      .get("https://megaman-api-server.onrender.com/allGames")
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
   }, []);
@@ -39,7 +39,7 @@ const GamesPage = () => {
             >
               <Link
                 className="sm:text-3xl text-lg capitalize hover:text-blue-200/50"
-                to={`/#/oneGame/${d._id}`}
+                to={`/oneGame/${d._id}`}
               >
                 <strong>{d.title}</strong>
               </Link>

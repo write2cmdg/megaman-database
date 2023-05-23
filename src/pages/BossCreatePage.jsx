@@ -25,9 +25,9 @@ const BossCreatePage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("https://megaman-api-server.onrender.com/#/createBoss", values)
+      .post("https://megaman-api-server.onrender.com/createBoss", values)
       .then((res) => {
-        navigate("/#/allBosses");
+        navigate("/allBosses");
       })
       .catch((err) => console.log(err));
     toast.success("You've Created a New Robot Master!");

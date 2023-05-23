@@ -21,7 +21,7 @@ const Login = () => {
       <div className="flex flex-col justify-center">
         <Separator />
 
-        {user && user.email && <Navigate to="/#/allBosses" />}
+        {user && user.email && <Navigate to="/allBosses" />}
 
         {!user && (
           <div>
@@ -79,7 +79,7 @@ const Login = () => {
               <p className="ml-4">
                 Need an Account?
                 <Link
-                  to={"/#/register"}
+                  to={"/register"}
                   className="text-blue-600 hover:text-yellow-200"
                 >
                   

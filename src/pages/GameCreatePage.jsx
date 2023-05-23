@@ -21,8 +21,8 @@ const GameCreatePage = () => {
     const bossesArray = values.bosses.split(",").map((boss) => boss.trim());
     const newValues = { ...values, bosses: bossesArray };
     axios
-      .post("https://megaman-api-server.onrender.com/#/createGame", newValues)
-      .then((res) => navigate("/#/allGames"))
+      .post("https://megaman-api-server.onrender.com/createGame", newValues)
+      .then((res) => navigate("/allGames"))
       .catch((err) => console.log(err));
     toast.success(`You've Created a New Game!`);
   };

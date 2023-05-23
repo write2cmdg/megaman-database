@@ -13,7 +13,7 @@ const BossPage = () => {
 
   useEffect(() => {
     axios
-      .get("https://megaman-api-server.onrender.com/#/oneBoss/" + id)
+      .get("https://megaman-api-server.onrender.com/oneBoss/" + id)
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
   }, []);
@@ -24,8 +24,8 @@ const BossPage = () => {
     );
     if (confirm) {
       axios
-        .delete("https://megaman-api-server.onrender.com/#/deleteBoss/" + id)
-        .then((res) => navigate(`/#/allBosses/`))
+        .delete("https://megaman-api-server.onrender.com/deleteBoss/" + id)
+        .then((res) => navigate(`/allBosses/`))
         .catch((err) => console.log(err));
       toast.success(`You've Permanently Deleted ${data.name}!`);
     }
@@ -43,7 +43,7 @@ const BossPage = () => {
             Robot Master Not found.
           </h2>
           <Link
-            to={`/#/createBoss`}
+            to={`/createBoss`}
             className="sm:text-xl text-lg capitalize font-bold text-blue-200 hover:text-yellow-200"
           >
             
@@ -97,7 +97,7 @@ const BossPage = () => {
                 game:
               </strong>
               <Link
-                to={`/#/oneGameByName/${data.game}`}
+                to={`/oneGameByName/${data.game}`}
                 className="sm:text-xl text-lg capitalize font-bold text-blue-400 hover:text-yellow-200"
               >
                 {data.game}
@@ -123,7 +123,7 @@ const BossPage = () => {
         <div className="bg-slate-800/90 flex flex-row p-2 md:justify-evenly justify-between uppercase font-press-start text-xs md:text-xl text-center">
           <Link
             className=" text-lg text-blue-200 underline hover:text-yellow-300"
-            to={`/#/updateBoss/${data._id} `}
+            to={`/updateBoss/${data._id} `}
           >
             update
           </Link>
