@@ -32,11 +32,11 @@ import ProtectedRoutes from "./routes/ProtectedRoutes";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/#/" element={<Main />}>
-      <Route path="/#/login" element={<Login />} />
-      <Route path="/#/register" element={<Register />} />
+    <Route path="/" element={<Main />}>
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
       <Route
-        path="/#/allGames"
+        path="/allGames"
         element={
           <ProtectedRoutes>
             <GamesPage />
@@ -44,7 +44,7 @@ const router = createBrowserRouter(
         }
       />
       <Route
-        path="/#/allBosses"
+        path="/allBosses"
         element={
           <ProtectedRoutes>
             <BossesPage />
@@ -52,7 +52,7 @@ const router = createBrowserRouter(
         }
       />
       <Route
-        path="/#/oneBoss/:id"
+        path="/oneBoss/:id"
         element={
           <ProtectedRoutes>
             <BossPage />
@@ -60,7 +60,7 @@ const router = createBrowserRouter(
         }
       />
       <Route
-        path="/#/oneBossByName/:id"
+        path="/oneBossByName/:id"
         element={
           <ProtectedRoutes>
             <BossByNamePage />
@@ -68,7 +68,7 @@ const router = createBrowserRouter(
         }
       />
       <Route
-        path="/#/createBoss"
+        path="/createBoss"
         element={
           <ProtectedRoutes>
             <BossCreatePage />
@@ -76,16 +76,16 @@ const router = createBrowserRouter(
         }
       />
       <Route
-        path="/#/updateBoss/:id"
+        path="/updateBoss/:id"
         element={
           <ProtectedRoutes>
             <BossUpdatePage />
           </ProtectedRoutes>
         }
       />
-      <Route path="/#/deleteBoss/:id" element={<p>Boss Deleted</p>} />
+      <Route path="/deleteBoss/:id" element={<p>Boss Deleted</p>} />
       <Route
-        path="/#/oneGame/:id"
+        path="/oneGame/:id"
         element={
           <ProtectedRoutes>
             <GamePage />
@@ -93,7 +93,7 @@ const router = createBrowserRouter(
         }
       />
       <Route
-        path="/#/oneGameByName/:id"
+        path="/oneGameByName/:id"
         element={
           <ProtectedRoutes>
             <GameByName />
@@ -101,7 +101,7 @@ const router = createBrowserRouter(
         }
       />
       <Route
-        path="/#/createGame"
+        path="/createGame"
         element={
           <ProtectedRoutes>
             <GameCreatePage />
@@ -109,15 +109,15 @@ const router = createBrowserRouter(
         }
       />
       <Route
-        path="/#/updateGame/:id"
+        path="/updateGame/:id"
         element={
           <ProtectedRoutes>
             <GameUpdatePage />
           </ProtectedRoutes>
         }
       />
-      <Route path="/#/deleteGame/:id" element={<p>Game Deleted</p>} />
-      <Route path="/#/*" element={<NotFound />} />
+      <Route path="/deleteGame/:id" element={<p>Game Deleted</p>} />
+      <Route path="/*" element={<NotFound />} />
     </Route>
   )
 );
