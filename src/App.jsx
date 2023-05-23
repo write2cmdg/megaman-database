@@ -33,8 +33,8 @@ import ProtectedRoutes from "./routes/ProtectedRoutes";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/#/" element={<Main />}>
-      <Route path="/#/login" element={<Login />} />
-      <Route path="/#/register" element={<Register />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
       <Route
         path="/allGames"
         element={
