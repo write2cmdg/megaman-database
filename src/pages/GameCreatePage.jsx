@@ -21,8 +21,8 @@ const GameCreatePage = () => {
     const bossesArray = values.bosses.split(",").map((boss) => boss.trim());
     const newValues = { ...values, bosses: bossesArray };
     axios
-      .post("https://megaman-api-server.onrender.com/createGame", newValues)
-      .then((res) => navigate("/allGames"))
+      .post("https://megaman-api-server.onrender.com/#/createGame", newValues)
+      .then((res) => navigate("/#/allGames"))
       .catch((err) => console.log(err));
     toast.success(`You've Created a New Game!`);
   };
@@ -49,7 +49,7 @@ const GameCreatePage = () => {
         >
           <div className="mb-2 flex flex-row justify-between">
             <label className="w-1/3 font-press-start" htmlFor="title">
-              Title:{" "}
+              Title:
             </label>
             <input
               className="w-1/2 pl-3 bg-blue-200 text-blue-900 capitalize border-blue-900 border-4 p-1 rounded-lg"
@@ -63,7 +63,7 @@ const GameCreatePage = () => {
 
           <div className="mb-2 flex flex-row justify-between">
             <label className="w-1/3 font-press-start" htmlFor="year">
-              year:{" "}
+              year:
             </label>
             <input
               className="w-1/2 pl-3 bg-blue-200 text-blue-900 capitalize border-blue-900 border-4 p-1 rounded-lg"
@@ -77,7 +77,7 @@ const GameCreatePage = () => {
 
           <div className="mb-2 flex flex-row justify-between">
             <label className="w-1/3 font-press-start" htmlFor="story">
-              story:{" "}
+              story:
             </label>
             <input
               className="w-1/2 pl-3 bg-blue-200 text-blue-900 capitalize border-blue-900 border-4 p-1 rounded-lg"
@@ -91,7 +91,7 @@ const GameCreatePage = () => {
 
           <div className="mb-2 flex flex-row justify-between">
             <label className="w-1/3 font-press-start" htmlFor="bosses">
-              bosses:{" "}
+              bosses:
             </label>
             <input
               className="w-1/2 pl-3 bg-blue-200 text-blue-900 capitalize border-4 p-1  border-blue-900 rounded-lg"

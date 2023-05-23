@@ -25,9 +25,9 @@ const BossCreatePage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("https://megaman-api-server.onrender.com/createBoss", values)
+      .post("https://megaman-api-server.onrender.com/#/createBoss", values)
       .then((res) => {
-        navigate("/allBosses");
+        navigate("/#/allBosses");
       })
       .catch((err) => console.log(err));
     toast.success("You've Created a New Robot Master!");
@@ -55,7 +55,7 @@ const BossCreatePage = () => {
         >
           <div className="mb-2 flex flex-row justify-between">
             <label className="w-1/3 font-press-start" htmlFor="name">
-              Name:{" "}
+              Name:
             </label>
             <input
               className="w-1/2 pl-3 bg-blue-200 text-blue-900 capitalize border-blue-900 border-4 p-1 rounded-lg"
@@ -69,7 +69,7 @@ const BossCreatePage = () => {
 
           <div className="mb-2 flex flex-row justify-between">
             <label className="w-1/3 font-press-start" htmlFor="hp">
-              hp:{" "}
+              hp:
             </label>
             <input
               className="w-1/2 pl-3 bg-blue-200 text-blue-900 capitalize border-blue-900 border-4 p-1 rounded-lg"
@@ -83,7 +83,7 @@ const BossCreatePage = () => {
 
           <div className="mb-2 flex flex-row justify-between">
             <label className="w-1/3 font-press-start" htmlFor="weapon">
-              Weapon:{" "}
+              Weapon:
             </label>
             <input
               className="w-1/2 pl-3 bg-blue-200 text-blue-900 capitalize border-blue-900 border-4 p-1 rounded-lg"
@@ -97,7 +97,7 @@ const BossCreatePage = () => {
 
           <div className="mb-2 flex flex-row justify-between">
             <label className="w-1/3 font-press-start" htmlFor="attack">
-              Attack:{" "}
+              Attack:
             </label>
             <input
               className="w-1/2 pl-3 bg-blue-200 text-blue-900 capitalize border-4 p-1  border-blue-900 rounded-lg"
@@ -111,7 +111,7 @@ const BossCreatePage = () => {
 
           <div className="mb-2 flex flex-row justify-between">
             <label className="w-1/3 font-press-start" htmlFor="weakness">
-              Weakness:{" "}
+              Weakness:
             </label>
             <input
               className="w-1/2 pl-3 bg-blue-200 text-blue-900 capitalize border-blue-900 border-4 p-1 rounded-lg"
@@ -127,7 +127,7 @@ const BossCreatePage = () => {
 
           <div className="mb-2 flex flex-row justify-between">
             <label className="w-1/3 font-press-start" htmlFor="game">
-              Game:{" "}
+              Game:
             </label>
             <input
               className="w-1/2 pl-3 bg-blue-200 text-blue-900 capitalize border-blue-900 border-4 p-1 rounded-lg"

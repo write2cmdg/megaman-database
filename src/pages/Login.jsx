@@ -21,7 +21,7 @@ const Login = () => {
       <div className="flex flex-col justify-center">
         <Separator />
 
-        {user && user.email && <Navigate to="/allBosses" />}
+        {user && user.email && <Navigate to="/#/allBosses" />}
 
         {!user && (
           <div>
@@ -42,7 +42,7 @@ const Login = () => {
               >
                 <div className="mb-2 flex flex-row justify-between">
                   <label className="w-1/3 font-press-start" htmlFor="email">
-                    email:{" "}
+                    email:
                   </label>
                   <input
                     className="w-1/2 pl-3 bg-blue-200 text-blue-900 capitalize border-blue-900 border-4 p-1 rounded-lg"
@@ -56,7 +56,7 @@ const Login = () => {
                 </div>
                 <div className="mb-2 flex flex-row justify-between">
                   <label className="w-1/3 font-press-start" htmlFor="password">
-                    password:{" "}
+                    password:
                   </label>
                   <input
                     className="w-1/2 pl-3 bg-blue-200 text-blue-900 capitalize border-blue-900 border-4 p-1 rounded-lg"
@@ -77,12 +77,12 @@ const Login = () => {
                 {error && <div>{error}</div>}
               </Form>
               <p className="ml-4">
-                Need an Account?{" "}
+                Need an Account?
                 <Link
-                  to={"/register"}
+                  to={"/#/register"}
                   className="text-blue-600 hover:text-yellow-200"
                 >
-                  {" "}
+                  
                   Register Here
                 </Link>
               </p>

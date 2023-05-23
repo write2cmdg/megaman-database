@@ -16,7 +16,7 @@ export const useRegister = () => {
         setError(null)
 
         try {
-            const response = await axios.post('https://megaman-api-server.onrender.com/register', {
+            const response = await axios.post('https://megaman-api-server.onrender.com/#/register', {
                 email,
                 password
             });
@@ -37,7 +37,7 @@ export const useRegister = () => {
     }
 
     if (user) {
-        navigate("/allBosses");  
+        navigate("/#/allBosses");  
     }
 
     return { register, isLoading, error }

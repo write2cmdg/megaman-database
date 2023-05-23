@@ -13,7 +13,7 @@ const GamePage = () => {
 
   useEffect(() => {
     axios
-      .get("https://megaman-api-server.onrender.com/oneGame/" + id)
+      .get("https://megaman-api-server.onrender.com/#/oneGame/" + id)
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
   }, []);
@@ -22,8 +22,8 @@ const GamePage = () => {
     const confirm = window.confirm(`Delete Game: ${data.title} Permanently?`);
     if (confirm) {
       axios
-        .delete("https://megaman-api-server.onrender.com/deleteGame/" + id)
-        .then((res) => navigate(`/allGames/`))
+        .delete("https://megaman-api-server.onrender.com/#/deleteGame/" + id)
+        .then((res) => navigate(`/#/allGames/`))
         .catch((err) => console.log(err));
       toast.success(`You've Permanently Deleted ${data.title}!`);
     }
@@ -40,7 +40,7 @@ const GamePage = () => {
         text-blue-200 text-xl w-screen md:text-3xl text-center font-press-start uppercase
         "
         >
-          {data.title}{" "}
+          {data.title}
         </h2>
       </div>
 
@@ -50,25 +50,25 @@ const GamePage = () => {
             <h2 className="capitalize">
               <strong className="uppercase font-press-start text-md align-middle">
                 Title:
-              </strong>{" "}
+              </strong>
               {data.title}
             </h2>
             <h2 className="capitalize">
               <strong className="uppercase font-press-start text-md align-middle">
                 Year:
-              </strong>{" "}
+              </strong>
               {data.year}
             </h2>
             <h2 className="capitalize">
               <strong className="uppercase font-press-start text-md align-middle">
                 Story:
-              </strong>{" "}
+              </strong>
               {data.story}
             </h2>
             <h2 className="capitalize">
               <strong className="uppercase font-press-start text-md align-middle">
                 Robot Masters:(
-                <span className="text-yellow-200">Scroll Down</span>){" "}
+                <span className="text-yellow-200">Scroll Down</span>)
               </strong>
             </h2>
           </div>
@@ -81,7 +81,7 @@ const GamePage = () => {
                 className="w-3/4 flex flex-row justify-evenly items-center"
               >
                 <Link
-                  to={`/oneBossByName/${boss}`}
+                  to={`/#/oneBossByName/${boss}`}
                   className="mx-auto basis-1/2 sm:text-3xl text-lg capitalize hover:text-blue-200/50"
                 >
                   <strong>{boss}</strong>
@@ -104,7 +104,7 @@ const GamePage = () => {
         <div className="bg-slate-800/90 flex flex-row p-2 md:justify-evenly justify-between uppercase font-press-start text-xs md:text-xl text-center">
           <Link
             className=" text-lg text-blue-200 underline hover:text-yellow-300"
-            to={`/updateGame/${data._id} `}
+            to={`/#/updateGame/${data._id} `}
           >
             update
           </Link>

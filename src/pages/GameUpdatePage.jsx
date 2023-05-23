@@ -14,7 +14,7 @@ function GameUpdatePage() {
 
   useEffect(() => {
     axios
-      .get(`https://megaman-api-server.onrender.com/oneGame/${id}`)
+      .get(`https://megaman-api-server.onrender.com/#/oneGame/${id}`)
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
   }, []);
@@ -28,10 +28,10 @@ function GameUpdatePage() {
     const updatedValues = { ...values, bosses: bossesArray }; // update values object with new array
     axios
       .put(
-        `https://megaman-api-server.onrender.com/updateGame/${id}`,
+        `https://megaman-api-server.onrender.com/#/updateGame/${id}`,
         updatedValues
       )
-      .then((res) => navigate(`/oneGame/${id}`))
+      .then((res) => navigate(`/#/oneGame/${id}`))
       .catch((err) => console.log(err));
     toast.success(`You've Successfully Updated ${data.title}!`);
   }
@@ -58,7 +58,7 @@ function GameUpdatePage() {
         >
           <div className="mb-2 flex flex-row justify-between">
             <label className="w-1/3 font-press-start" htmlFor="title">
-              Title:{" "}
+              Title:
             </label>
             <input
               className="w-1/2 pl-3 bg-blue-200 text-blue-900 capitalize border-blue-900 border-4 p-1 rounded-lg"
@@ -72,7 +72,7 @@ function GameUpdatePage() {
 
           <div className="mb-2 flex flex-row justify-between">
             <label className="w-1/3 font-press-start" htmlFor="year">
-              year:{" "}
+              year:
             </label>
             <input
               className="w-1/2 pl-3 bg-blue-200 text-blue-900 capitalize border-blue-900 border-4 p-1 rounded-lg"
@@ -86,7 +86,7 @@ function GameUpdatePage() {
 
           <div className="mb-2 flex flex-row justify-between">
             <label className="w-1/3 font-press-start" htmlFor="story">
-              Story:{" "}
+              Story:
             </label>
             <input
               className="w-1/2 pl-3 bg-blue-200 text-blue-900 capitalize border-blue-900 border-4 p-1 rounded-lg"
@@ -100,7 +100,7 @@ function GameUpdatePage() {
 
           <div className="mb-2 flex flex-row justify-between">
             <label className="w-1/3 font-press-start" htmlFor="bosses">
-              Bosses:{" "}
+              Bosses:
             </label>
             <input
               className="w-1/2 pl-3 bg-blue-200 text-blue-900 capitalize border-4 p-1  border-blue-900 rounded-lg"

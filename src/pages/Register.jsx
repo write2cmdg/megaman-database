@@ -36,7 +36,7 @@ const Register = () => {
           >
             <div className="mb-2 flex flex-row justify-between">
               <label className="w-1/3 font-press-start" htmlFor="email">
-                email:{" "}
+                email:
               </label>
               <input
                 className="w-1/2 pl-3 bg-blue-200 text-blue-900 capitalize border-blue-900 border-4 p-1 rounded-lg"
@@ -51,7 +51,7 @@ const Register = () => {
 
             <div className="mb-2 flex flex-row justify-between">
               <label className="w-1/3 font-press-start" htmlFor="password">
-                password:{" "}
+                password:
               </label>
               <input
                 className="w-1/2 pl-3 bg-blue-200 text-blue-900 capitalize border-blue-900 border-4 p-1 rounded-lg"
@@ -75,9 +75,9 @@ const Register = () => {
           </Form>
 
           <p className="ml-4">
-            Already Have an Account?{" "}
-            <Link to={"/login"} className="text-blue-600 hover:text-yellow-200">
-              {" "}
+            Already Have an Account?
+            <Link to={"/#/login"} className="text-blue-600 hover:text-yellow-200">
+              
               Login Here
             </Link>
           </p>

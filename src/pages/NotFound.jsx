@@ -17,7 +17,7 @@ const NotFound = () => {
       </h2>
       <Link
         className="mx-auto py-2 min-w-fit px-4 md:mb-2 text-center text-xl text-blue-200 uppercase underline hover:text-yellow-300"
-        to="/allBosses"
+        to="/#/allBosses"
       >
         home
       </Link>
